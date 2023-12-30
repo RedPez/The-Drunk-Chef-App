@@ -1,11 +1,55 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+
+    
+    <title>Cocktail Recipe Website</title>
 </head>
 <body>
-    
+
+<!-- Button to open the modal -->
+<button onclick="openModal(0)">Open Modal</button>
+
+<!-- Modal -->
+<!-- Cocktail Modal with Bootstrap Styles -->
+<div class="modal" id="cocktailModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm modal-dialog-scrollable " role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="cocktailName">Cocktail Name</h2>
+                <button type="button" class="close" onclick="closeModal()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Image and Ingredients section -->
+                <div class="image-and-ingredients" id="cocktailImageIngredientsContainer">
+                    <div class="image-container">
+                        <img class="cocktailImage" id="cocktailImage" src="" alt="Cocktail Image">
+                    </div>
+                    <div class="ingredients-container" id="ingredientsListContainer">                                          
+                    </div>
+                </div>
+
+                <!-- Recipe section -->
+                <div class="recipe-container" id="recipeTextContainer">             
+                    
+                </div>
+                <br>
+
+                <!-- Video section -->
+                <div class="video" id="video">                   
+                   
+                
+        </div>
+    </div>
+</div>
+
+
+<script src="script.js"></script>
 </body>
 </html>
