@@ -1,3 +1,5 @@
+// Add all JS to do with page functionality here incl. modal, search and favourites page functions
+
 $(document).ready(function(){
 
  
