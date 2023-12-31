@@ -1,0 +1,85 @@
+/* wE MAY NEED TO CREATE MEDIA QUERIES AS SOME BOOTSTRAP ASPECTS ARE NOT RESPONSIVE*/
+
+/* Page background */
+body {
+    background-color: rgba(255, 255, 255, 0.137);
+}
+/* Disables default Bootstrap navbar background */
+nav {
+    background: black !important;
+}
+/* Website title */
+h1 {
+  color: white;
+  font-family: "Covered By Your Grace";
+  font-size: 80px;
+  text-align: center;
+}
+h1:hover {
+   color: silver; 
+}
+/* Section titles incl. jumbotron, sections and cards */
+h2, h3, h5 {
+    font-family: "Outfit";
+}
+/* Star icon for link to favourites page */
+.fa-star {
+  color: white;
+  font-size: 40px;
+  padding-bottom: 20px;
+}
+.fa-star:hover {
+  font-size: 50px;
+  color: orange;
+}
+/* Multi-select button to choose ingredients*/
+#select-btn {
+    background-image: linear-gradient(silver, white);
+    border: 2px solid black;
+    border-radius: 4px !important;
+}
+/* Button to trigger search for results*/
+#search-btn {
+    border-radius: 3px !important;
+    background-image: linear-gradient(90deg, black, rgb(82, 74, 74));
+    margin-top: 30px;
+    margin-left: 60px;
+    border: 2px solid rgb(38, 37, 37);
+}
+/* General buttons*/
+.btn {
+    border-radius: 0px !important;
+}
+/* Section that displays selected ingredients*/
+#selected-ingredients {
+    background-image: linear-gradient(50deg, rgba(239, 186, 133, 0.632),rgba(189, 234, 209, 0.842), rgb(218, 189, 248));
+}
+/* Search section*/
+#search-sec, #selected-ingredients {
+    border: solid 4px rgb(0, 0, 0);
+    padding: 60px;
+}
+/* Search and results section containers*/
+#results-sec, #search-sec {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+/* Targets all results cards*/
+.result-card {
+    border: 3px solid black;
+}
+/* Footer section */
+footer {
+    background-color: black;
+    color: white;
+}
+/* Social media icons*/
+.socials {
+    color: white;
+}
+/* Back to top link*/
+.back-to-top {
+    text-decoration: none;
+    color: white;
+}
+/*MODAL CSS CAN BE ADDED HERE*/
