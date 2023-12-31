@@ -40,16 +40,14 @@
             <!--Website title-->
             <h1 class="neon" id="website-title" data-text="U"><span class="flicker-fast">Th</span>e<span class="flicker-slow">&puncsp;Dru</span>nk<span class="flicker-fast">&puncsp;Ch</span>ef</h1>
             <!--Navigation Tabs-->
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="homepage.html">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="favourites.html">Favourites</a>
-                </li>
-              </ul>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                  <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true"><a href="homepage.html">Home</a></button>
+                  <button class="nav-link" id="nav-favourites-tab" data-bs-toggle="tab" data-bs-target="#nav-favourites" type="button" role="tab" aria-controls="nav-favourites" aria-selected="false"><a href="favourites.html">Favourites</a></button>
+              </nav>
+              <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"></div>
+                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-favourites-tab"></div>
           </div>
-        </nav>
         <!--Jumbotron section including page intro-->
         <div class="h-100 p-5 clearfix intro">
             <img src="assets/images/6.svg" class="col-md-6 float-md-end mb-3 ms-md-3 intro-img" alt="">
