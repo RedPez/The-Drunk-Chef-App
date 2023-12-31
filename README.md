@@ -10,6 +10,7 @@
 5. [Build Status](#build-status)
 6. [Credits](#credits)
 7. [License](#license)
+8. [Creators](#creators)
 
 ## About the project
 
@@ -68,3 +69,10 @@ We prioritise seamless functionality and recognise that there is always room for
 ### License 
 MIT
 
+### Creators
+- [Tosin](https://github.com/tosin1691)
+- [Perrie](https://github.com/RedPez)
+- [Whitney](https://github.com/Whit-Williams)
+- [Timi](https://github.com/Timiwesky)
+- [Fetie](https://github.com/fetieh)
+- [Kelly](https://github.com/nijiti)
