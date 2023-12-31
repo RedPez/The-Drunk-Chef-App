@@ -11,30 +11,12 @@ $(document).ready(function(){
 
     let  cocktailNameUrl = "https://api.api-ninjas.com/v1/cocktail?ingredients=" + ingredientsString + apiKey
 
+    let images = ["./images/cocktail1.jpg", "./images/cocktail2.jpeg", "./images/cocktail3.jpg", "./images/cocktail4.jpg", "./images/cocktail5.jpg", "./images/cocktail6.jpg", "./images/cocktail7.jpg", "./images/cocktail8.jpg", "./images/cocktail9.jpg", "./images/cocktail10.jpg", "./images/cocktail11.jpg", "./images/cocktail12.jpg", "./images/cocktail13.jpg", "./images/cocktail14.jpg", "./images/cocktail15.jpg"]
 
+    let shuffledImages = images.sort(function(a, b){
+        return 0.5 - Math.random()
+    })
 
-    function renderCocktailImage (url) {
-        
-        fetch(url)
-                .then(function (response) {
-                    return response.json()
-                }).then(function (data) {
-                console.log(data.drinks)
-                cocktailDrink = data.drinks
-                if(cocktailDrink) {
-                    let cocktailResults = $("<div>")
-                    cocktailResults.attr("class", "results-container")
-                    let cocktailImageEl = $("<img>")
-                    cocktailImageEl.attr({"src": data.drinks[0].strDrinkThumb, "class": "cocktail-image"})
-                    let cocktailNameEl = $("<h1>")
-                    cocktailNameEl.text(data.drinks[0].strDrink)
-                    cocktailResults.append(cocktailImageEl, cocktailNameEl)
-                    $(document.body).prepend(cocktailResults)
-                }
-            })
-               
-
-    }
 
     const fetchCocktailName = async ()=>{
         const response = await fetch(cocktailNameUrl)
@@ -43,17 +25,104 @@ $(document).ready(function(){
         for(i = 0; i < data.length; i++){
 
             let replacedCocktailName = data[i].name.replaceAll(',', '')
+            // let cocktailNameId = data[i].name.replaceAll(',', '').replaceAll(' ', '-') 
+            // console.log(cocktailNameId)
             // console.log(replacedCocktailName)
-            let cocktailNameString = "s=" + replacedCocktailName
-            let cocktailImgUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?" + cocktailNameString
-            renderCocktailImage(cocktailImgUrl)
-            
+            // let cocktailNameString = "s=" + replacedCocktailName
+            // let cocktailImgUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?" + cocktailNameString
+            // renderCocktailImage(cocktailImgUrl)
+
+            // Below Code display results
+            let cocktailResults = $("<div>")
+            cocktailResults.attr("class", "results-container")
+            let cocktailImageEl = $("<img>")
+            cocktailImageEl.attr({"src": shuffledImages[i], "class": "cocktail-image", "width": "20%"})
+            let cocktailNameEl = $("<h1>")
+            cocktailNameEl.text(replacedCocktailName)
+            let cocktailResultsButton = $("<button>")
+            cocktailResultsButton.attr({"type": "button", "class": "btn btn-info btn-lg", "data-toggle": "modal", "data-target": "#myModal"})
+            cocktailResultsButton.text("Expand")
+
+            // Modal
+            let cocktailModalFade = $("<div>")
+            cocktailModalFade.attr({"class": "modal fade", "id": "myModal", "role": "dialog"})
+            let cocktailModalDialog = $("<div>")
+            cocktailModalDialog.attr("class", "modal-dialog")
+            let cocktailModalContent = $("<div>")
+            cocktailModalContent.attr("class", "modal-content")
+            let cocktailModalHeader = $("<div>")
+            cocktailModalHeader.attr("class", "modal-header")
+            let modalCloseButton = $("<button>")
+            modalCloseButton.attr({"type": "button", "class": "close", "data-dismiss": "modal"})
+            modalCloseButton.html("&times")
+            let modalTitle = $("<h4>")
+            modalTitle.attr("class", "modal-title")
+            modalTitle.text(replacedCocktailName)
+            let modalBody = $("<div>")
+            modalBody.attr("class", "modal-body")
+            let exampleText = $("<p>")
+            exampleText.text("testing")
+
+
+            modalBody.append(exampleText)
+            cocktailModalHeader.append(modalCloseButton, modalTitle)
+            cocktailModalContent.append(cocktailModalHeader, modalBody)
+            cocktailModalDialog.append(cocktailModalContent)
+            cocktailModalFade.append(cocktailModalDialog)
+            cocktailResults.append(cocktailImageEl, cocktailNameEl, cocktailResultsButton)
+            $(document.body).prepend(cocktailResults, cocktailModalFade)
             
             
         }
     }
-
     fetchCocktailName()
+
+
+
+    
+    
+
+    // function renderCocktailImage (url) {
+        
+    //     fetch(url)
+    //             .then(function (response) {
+    //                 return response.json()
+    //             }).then(function (data) {
+    //             console.log(data.drinks)
+    //             cocktailDrink = data.drinks
+    //             if(cocktailDrink) {
+    //                 let cocktailResults = $("<div>")
+    //                 cocktailResults.attr("class", "results-container")
+    //                 let cocktailImageEl = $("<img>")
+    //                 cocktailImageEl.attr({"src": data.drinks[0].strDrinkThumb, "class": "cocktail-image"})
+    //                 let cocktailNameEl = $("<h1>")
+    //                 cocktailNameEl.text(data.drinks[0].strDrink)
+    //                 cocktailResults.append(cocktailImageEl, cocktailNameEl)
+    //                 $(document.body).prepend(cocktailResults)
+    //             }
+    //         })
+               
+
+    // }
+
+    // const fetchCocktailName = async ()=>{
+    //     const response = await fetch(cocktailNameUrl)
+    //     const data = await response.json()
+    //     console.log(data)
+    //     for(i = 0; i < data.length; i++){
+
+    //         let replacedCocktailName = data[i].name.replaceAll(',', '')
+    //         // console.log(replacedCocktailName)
+    //         let cocktailNameString = "s=" + replacedCocktailName
+    //         let cocktailImgUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?" + cocktailNameString
+    //         renderCocktailImage(cocktailImgUrl)
+            
+            
+            
+    //     }
+    // }
+
+    // fetchCocktailName()
 
 
 
