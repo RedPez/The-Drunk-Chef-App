@@ -23,99 +23,130 @@
     <title>The Drunk Chef</title>
   </head>
 
-  <header>
-    <!--Navigation bar section, including logo, title and favourites icon-->
-    <nav class="navbar">
-      <div class="container-fluid">
-        <a class="navbar-logo" href="#">
-          <img
-            src="assets/images/logo-placeholder.svg"
-            alt="Logo"
-            width="70"
-            height="90"
-            class="d-inline-block align-text-top"
-          />
-        </a>
-        <h1 id="website-title">The Drunk Chef</h1>
-        <i class="fa-regular fa-star"></i>
-      </div>
-    </nav>
-    <!--Jumbotron section including page intro-->
-    <div class="h-100 p-5">
-       <h2>Intro section</h2>
-       <p> Text text text text text</p>
-    </div>
-      
-  </header>
-
   <body>
-<!--Container for search button and display box-->
-<div class="container-fluid">
-    <div class="row" id="search-sec">
-        <div class="col">
-          <a href="#" class="btn shadow p-3 w-75" id="select-btn">Select your ingredients</a>
-          <a href="#" class="btn btn-dark shadow-lg w-50" id="search-btn">GET MY RECIPES</a>
+    <header>
+      <!--Navigation bar section, including logo, title and favourites icon-->
+      <nav class="navbar">
+        <div class="container-fluid">
+          <a class="navbar-logo" href="#">
+            <img
+              src="assets/images/logo-placeholder.svg"
+              alt="Logo"
+              width="70"
+              height="90"
+              class="d-inline-block align-text-top"
+            />
+          </a>
+          <h1 id="website-title">The Drunk Chef</h1>
+          <i class="fa-regular fa-star"></i>
         </div>
+      </nav>
+      <!--Jumbotron section including page intro-->
+      <div class="h-100 p-5">
+        <h2>Intro section</h2>
+        <p>Text text text text text</p>
+      </div>
+    </header>
+
+    <!--Container for search button and display box-->
+    <div class="container-fluid">
+      <div class="row" id="search-sec">
+        <div class="col">
+          <strong>Select Ingredients (max 4):</strong>
+          <select id="multiple-checkboxes" multiple="multiple"></select>
+          <a href="#" class="btn btn-dark shadow-lg w-50" id="search-btn"
+            >GET MY RECIPES</a
+          >
+        </div>
+        <!--Container for ingredient selection-->
         <div class="col">
           <div class="row" id="selected-ingredients">
-            <div class="col">
-                Ingredients listed in here. 
-            </div>
+            <div class="col"></div>
           </div>
         </div>
-  </div>
-  <!--Container for search result cards and example cards-->
-  <h3 id="results-title">Choose your recipe:</h3>
-  <div class="container-fluid" id="results-sec">
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col">
-              <div class="card h-100 result-card">
-                <img src="assets/images/pornstar-martini.jpeg" class="card-img-top w-auto h-auto" alt="">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <a href="#" class="btn btn-dark">View Recipe</a>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100 result-card">
-                <img src="assets/images/pornstar-martini.jpeg" class="card-img-top w-auto h-auto" alt="">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <a href="#" class="btn btn-dark">View Recipe</a>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100 result-card">
-                <img src="assets/images/pornstar-martini.jpeg" class="card-img-top w-auto h-auto" alt="">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="btn btn-dark">View Recipe</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
- <!--ADD MODAL-->       
-
-<!--Footer section-->
-<footer class="d-flex flex-wrap justify-content-around align-items-center py-3 my-4">
-    <div class="col-md-4 d-flex align-items-center">
-      <span class="mb-3 mb-md-0">© 2024 Bootcamp Group 9</span>
+      </div>
     </div>
-    <!--Back to top link-->
-    <a class="back-to-top" href="#"><p>Back to top ↑</p></a>
-    <!--Social media icons/links-->
-    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-      <li class="ms-3"><a href="#"><i class="fa-brands fa-github socials"></i></a></li>
-      <li class="ms-3"><a href="#"><i class="fa-brands fa-square-twitter socials"></i></a></li>
-    </ul>
-  </footer> 
+    <!--Container for search result cards and example cards-->
+    <h3 id="results-title">Choose your recipe:</h3>
+    <div class="container-fluid" id="results-sec">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card h-100 result-card">
+            <img
+              src="assets/images/pornstar-martini.jpeg"
+              class="card-img-top w-auto h-auto"
+              alt=""
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                This is a longer card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+              <a href="#" class="btn btn-dark">View Recipe</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 result-card">
+            <img
+              src="assets/images/pornstar-martini.jpeg"
+              class="card-img-top w-auto h-auto"
+              alt=""
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                This is a longer card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+              <a href="#" class="btn btn-dark">View Recipe</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 result-card">
+            <img
+              src="assets/images/pornstar-martini.jpeg"
+              class="card-img-top w-auto h-auto"
+              alt=""
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                This is a longer card with supporting text below as a natural
+                lead-in to additional content.
+              </p>
+              <a href="#" class="btn btn-dark">View Recipe</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--ADD MODAL-->
+
+    <!--Footer section-->
+    <footer
+      class="d-flex flex-wrap justify-content-around align-items-center py-3 my-4"
+    >
+      <div class="col-md-4 d-flex align-items-center">
+        <span class="mb-3 mb-md-0">© 2024 Bootcamp Group 9</span>
+      </div>
+      <!--Back to top link-->
+      <a class="back-to-top" href="#"><p>Back to top ↑</p></a>
+      <!--Social media icons/links-->
+      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+        <li class="ms-3">
+          <a href="#"><i class="fa-brands fa-github socials"></i></a>
+        </li>
+        <li class="ms-3">
+          <a href="#"><i class="fa-brands fa-square-twitter socials"></i></a>
+        </li>
+      </ul>
+    </footer>
 
     <!--Link to jQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
@@ -125,10 +156,19 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <!--Link to  JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css"
+    />
     <!--Link to fontawesome fonts-->
-    <script src="https://kit.fontawesome.com/b58aa1de7c.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/b58aa1de7c.js"
+      crossorigin="anonymous"
+    ></script>
     <!--Link to JS with functional script-->
-
+    <script src="assets/js/functionality.js"></script>
     <!--Link to JS with with UI-related script-->
     <script src="assets/js/style.js"></script>
   </body>
