@@ -8,8 +8,8 @@
 3. [Key Features](#key-features)
 4. [Usage](#usage)
 5. [Build Status](#build-status)
-6. [Credits](#credits)
-7. [License](#license)
+6. [License](#license)
+7. [Credits](#credits)
 8. [Creators](#creators)
 
 ## About the project
@@ -56,6 +56,9 @@ We prioritise seamless functionality and recognise that there is always room for
 - point 2
 - point 3
 - point 4
+  
+### License 
+MIT
 
 ### Credits 
 - [Font Awesome](https://fontawesome.com/)
@@ -65,9 +68,6 @@ We prioritise seamless functionality and recognise that there is always room for
 - [add link title here](#addlinkhere)
 - [add link title here](#addlinkhere)
 - Many, many google searches
-
-### License 
-MIT
 
 ### Creators
 - [Tosin](https://github.com/tosin1691)
