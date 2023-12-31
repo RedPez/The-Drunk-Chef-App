@@ -7,31 +7,76 @@ body {
 /* Disables default Bootstrap navbar background */
 nav {
     background: black !important;
+    height: 170px;
 }
 /* Website title */
 h1 {
-  color: white;
-  font-family: "Covered By Your Grace";
-  font-size: 80px;
+  font-family: "Barriecito";
+  font-size: 70px;
   text-align: center;
 }
-h1:hover {
-   color: silver; 
-}
+
+.neon{
+    color: #ffffff;
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    font-weight: 400;
+    letter-spacing: 8px;
+    text-shadow: 1px 0px 4px #000000fa, 2px 0px 4px #d5f3ff, 3px 0px 4px #ffd5ff, 2px 0px 3px #d42cc0, 2px 3px 15px #ebd988f7, 2px 0px 15px, 5px 0px 125px, 20px 0vw 200px #cff39e,40px 0vw 200px #dcf4b4;
+  }
+  
+  .flicker-slow{
+    animation: flicker 3s linear infinite;
+  }
+  
+  .flicker-fast{
+    animation: flicker 1s linear infinite;
+  }
+  
+  @keyframes flicker {
+      0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+      opacity: .99;    
+      }
+      20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+          opacity: 0.4;
+      }
+  }
+  
+  /* Intro section image */
+.intro-img {
+    width: 400px;
+    height: 300px;
+}  
+
 /* Section titles incl. jumbotron, sections and cards */
 h2, h3, h5 {
     font-family: "Outfit";
 }
-/* Star icon for link to favourites page */
-.fa-star {
-  color: white;
-  font-size: 40px;
-  padding-bottom: 20px;
+
+#fav-page-title {
+    margin-top: 30px;
 }
-.fa-star:hover {
-  font-size: 50px;
-  color: orange;
+
+.fancy-title {
+    font-family: "Barriecito";
 }
+
+/* Page text */
+p {
+    font-family: "Outfit";
+}
+
+#intro-txt {
+    font-size: 30px;
+}
+/* Star and home icons for link to favourites and home pages */
+.nav-tabs {
+   margin-top: 120px; 
+   border: none;
+}
+
 /* Multi-select button to choose ingredients*/
 #select-btn {
     background-image: linear-gradient(silver, white);
@@ -52,7 +97,7 @@ h2, h3, h5 {
 }
 /* Section that displays selected ingredients*/
 #selected-ingredients {
-    background-image: linear-gradient(50deg, rgba(239, 186, 133, 0.632),rgba(189, 234, 209, 0.842), rgb(218, 189, 248));
+    background-image: linear-gradient(50deg, rgba(198, 239, 133, 0.632),rgba(214, 234, 189, 0.842), rgb(218, 189, 248));
 }
 /* Search section*/
 #search-sec, #selected-ingredients {
@@ -60,12 +105,15 @@ h2, h3, h5 {
     padding: 60px;
 }
 /* Search and results section containers*/
-#results-sec, #search-sec {
+#search-sec {
+    margin-bottom: 30px;
+}
+#results-sec, #fav-sec {
     margin-top: 30px;
     margin-bottom: 20px;
 }
 /* Targets all results cards*/
-.result-card {
+.result-card, .fav-card {
     border: 3px solid black;
 }
 /* Footer section */
