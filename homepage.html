@@ -18,41 +18,50 @@
       rel="stylesheet"
     />
     <!--The link to css sheet-->
-    <link rel="stylesheet" href="assets/css/homepage.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <!--Website title-->
     <title>The Drunk Chef</title>
   </head>
 
-  <header>
-    <!--Navigation bar section, including logo, title and favourites icon-->
-    <nav class="navbar">
-      <div class="container-fluid">
-        <a class="navbar-logo" href="#">
-          <img
-            src="assets/images/logo-placeholder.svg"
-            alt="Logo"
-            width="70"
-            height="90"
-            class="d-inline-block align-text-top"
-          />
-        </a>
-        <h1 id="website-title">The Drunk Chef</h1>
-        <i class="fa-regular fa-star"></i>
-      </div>
-    </nav>
-    <!--Jumbotron section including page intro-->
-    <div class="h-100 p-5">
-       <h2>Intro section</h2>
-       <p> Text text text text text</p>
-    </div>
-      
-  </header>
-
   <body>
+    <header>
+        <!--Navigation bar section, including logo, title and favourites icon-->
+        <nav class="navbar">
+          <div class="container-fluid">
+             <!-- <a class="navbar-logo" href="#">
+              <img
+                src="assets/images/6.svg"
+                alt="Logo"
+                width="110"
+                height="120"
+                class="d-inline-block align-text-top"
+              />
+            </a> -->
+            <!--Website title-->
+            <h1 class="neon" id="website-title" data-text="U"><span class="flicker-fast">Th</span>e<span class="flicker-slow">&puncsp;Dru</span>nk<span class="flicker-fast">&puncsp;Ch</span>ef</h1>
+            <!--Navigation Tabs-->
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="homepage.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="favourites.html">Favourites</a>
+                </li>
+              </ul>
+          </div>
+        </nav>
+        <!--Jumbotron section including page intro-->
+        <div class="h-100 p-5 clearfix intro">
+            <img src="assets/images/6.svg" class="col-md-6 float-md-end mb-3 ms-md-3 intro-img" alt="">
+           <p id="intro-txt">Welcome to <span class="fancy-title">The Drunk Chef</span>, the ultimate destination for all cocktail lovers! We believe that the best cocktails are made with a dash of convenience and a sprinkle of creativity. With our innovative platform, you can now become an expert mixologist from the comfort of your own home. Forget about running to the store for specific ingredients; simply select the items you already have in your house, and we'll conjure up a captivating collection of cocktail recipes just for you. Embrace your inner chef and let your taste buds embark on a delightful journey!
+        </p>
+        </div>
+      </header>
 <!--Container for search button and display box-->
 <div class="container-fluid">
     <div class="row" id="search-sec">
         <div class="col">
+            <h3>Start here:</h3>
           <a href="#" class="btn shadow p-3 w-75" id="select-btn">Select your ingredients</a>
           <a href="#" class="btn btn-dark shadow-lg w-50" id="search-btn">GET MY RECIPES</a>
         </div>
@@ -70,7 +79,7 @@
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <div class="col">
               <div class="card h-100 result-card">
-                <img src="assets/images/pornstar-martini.jpeg" class="card-img-top w-auto h-auto" alt="">
+                <img src="assets/images/4.png" class="card-img-top w-auto h-auto" alt="">
                 <div class="card-body">
                   <h5 class="card-title">Card title</h5>
                   <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -80,7 +89,7 @@
             </div>
             <div class="col">
               <div class="card h-100 result-card">
-                <img src="assets/images/pornstar-martini.jpeg" class="card-img-top w-auto h-auto" alt="">
+                <img src="assets/images/4.png" class="card-img-top w-auto h-auto" alt="">
                 <div class="card-body">
                   <h5 class="card-title">Card title</h5>
                   <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -90,7 +99,7 @@
             </div>
             <div class="col">
               <div class="card h-100 result-card">
-                <img src="assets/images/pornstar-martini.jpeg" class="card-img-top w-auto h-auto" alt="">
+                <img src="assets/images/4.png" class="card-img-top w-auto h-auto" alt="">
                 <div class="card-body">
                   <h5 class="card-title">Card title</h5>
                   <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
