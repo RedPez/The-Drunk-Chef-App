@@ -13,43 +13,39 @@
     <!--Google fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Anton&family=Barriecito&family=Covered+By+Your+Grace&family=Just+Me+Again+Down+Here&family=Nanum+Pen+Script&family=Outfit:wght@200;300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barriecito&family=Bayon&family=Boogaloo&family=Covered+By+Your+Grace&family=DM+Serif+Display&family=Jost&family=Koulen&family=Lexend:wght@400;700&family=Luckiest+Guy&family=Poppins:ital,wght@0,600;0,700;0,900;1,700;1,800&family=Sigmar&family=Tilt+Warp&display=swap" rel="stylesheet">
     <!--The link to css sheet-->
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <!--Website title-->
     <title>The Drunk Chef</title>
   </head>
 
 <body>
     <header>
-        <!--Navigation bar section, including logo, title and favourites icon-->
-        <nav class="navbar">
-          <div class="container-fluid">
-             <!-- <a class="navbar-logo" href="#">
-              <img
-                src="assets/images/6.svg"
-                alt="Logo"
-                width="110"
-                height="120"
-                class="d-inline-block align-text-top"
-              />
-            </a> -->
-            <!--Website title-->
-            <h1 class="neon" id="website-title" data-text="U"><span class="flicker-fast">Th</span>e<span class="flicker-slow">&puncsp;Dru</span>nk<span class="flicker-fast">&puncsp;Ch</span>ef</h1>
-            <!--Navigation Tabs-->
-            <ul class="nav nav-tabs justify-content-end">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="homepage.html">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="favourites.html">Favourites</a>
-                </li>
-              </ul>
-          </div>
-        </nav>
+        <!--Navigation bar section, including title and nav links-->
+             <!--Navigation Links-->
+             <nav class="navbar navbar-expand-lg">
+              <div class="container-fluid nav-div">
+                   <!--Website title-->
+                  <h1 class="neon" id="website-title" data-text="U"><span class="flicker-fast">Th</span>e<span class="flicker-slow">&puncsp;Dru</span>nk<span class="flicker-fast">&puncsp;Ch</span>ef</h1>
+                   <!--Responsive menu button-->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon navbar-dark"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link active page-links link-light" aria-current="page" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link page-links link-light" href="favourites.html">Favourites</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
 
 <h2 id="fav-page-title">Your favourite cocktail recipes:</h2>
 
@@ -57,7 +53,7 @@
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col">
           <div class="card h-10 fav-card">
-            <img src="assets/images/4.png" class="card-img-top w-auto h-auto" alt="">
+            <img src="images/4.png" class="card-img-top w-auto h-auto" alt="">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
               <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -67,7 +63,7 @@
         </div>
         <div class="col">
           <div class="card h-100 fav-card">
-            <img src="assets/images/4.png" class="card-img-top w-auto h-auto" alt="">
+            <img src="images/4.png" class="card-img-top w-auto h-auto" alt="">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
               <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -77,7 +73,7 @@
         </div>
         <div class="col">
           <div class="card h-100 fav-card">
-            <img src="assets/images/4.png" class="card-img-top w-auto h-auto" alt="">
+            <img src="images/4.png" class="card-img-top w-auto h-auto" alt="">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
               <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
@@ -93,7 +89,7 @@
       <span class="mb-3 mb-md-0">© 2024 Bootcamp Group 9</span>
     </div>
     <!--Back to top link-->
-    <a class="back-to-top" href="#"><p>Back to top ↑</p></a>
+    <a class="back-to-top" href="#top"><p>Back to top ↑</p></a>
     <!--Social media icons/links-->
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
       <li class="ms-3"><a href="#"><i class="fa-brands fa-github socials"></i></a></li>
