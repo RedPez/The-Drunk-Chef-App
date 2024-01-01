@@ -1,104 +1,5 @@
 // Add all JS to do with page functionality here incl. modal, search and favourites page functions
 
-$(document).ready(function () {
-  // Array of options with categories
-  var optionsArray = [
-    {
-      label: "Base",
-      children: [
-        "Vodka",
-        "Gin",
-        "Rum",
-        "Tequila",
-        "Whiskey",
-        "Brandy",
-        "Scotch",
-        "Bourbon",
-        "Cognac",
-        "Mezcal",
-        "Sake",
-        "Absinthe",
-        "Beer",
-        "Wine",
-        "Champagne",
-        "Prosecco",
-        "Sherry",
-        "Brandy",
-        "Cider",
-      ],
-    },
-    {
-      label: "Modifiers",
-      children: [
-        "Vermouth",
-        "Cherry Liqueur",
-        "Orange Liqueur",
-        "Balckberry Liqueur",
-        "Campari",
-        "Aperol",
-        "Amaretto",
-        "Bitters",
-        "Curacao",
-        "Triple Sec",
-        "Soda Water",
-        "Cream",
-        "Egg White",
-        ,
-      ],
-    },
-    {
-      label: "Flavourings & Colourings",
-      children: [
-        "Lime Juice",
-        "Lemon Juice",
-        "Orange Juice",
-        "Pineapple Juice",
-        "Mint",
-        "Strawberry Syrup",
-        "Rasperry Syrup",
-      ],
-    },
-  ];
-
-  // Populate the select element with options and groups
-  optionsArray.forEach(function (group) {
-    var optgroup = $("<optgroup>", { label: group.label });
-
-    group.children.forEach(function (option) {
-      optgroup.append(
-        $("<option>", {
-          value: option.toLowerCase(), // Use lowercase for consistency
-          text: option,
-        })
-      );
-    });
-
-    $("#multiple-checkboxes").append(optgroup);
-  });
-
-  // Initialise the multi-select dropdown
-  $("#multiple-checkboxes").multiselect({
-    includeSelectAllOption: true, // Remove "Select All" option
-    selectAllText: "Select All / Clear All", // cutomise the "Select All" text
-    maxSelect: 4, // Limit selection to 4 choices
-  });
-
-  // Capture change event on the multi-select dropdown
-  $("#multiple-checkboxes").change(function () {
-    // Clear the content of the display box
-    $("#selected-ingredients").empty();
-
-    // Get the selected items and append them to the display box
-    $("#multiple-checkboxes option:selected").each(function () {
-      $("#selected-ingredients").append(
-        '<div class="selected-item">' + $(this).text() + "</div>"
-      );
-    });
-  });
-
-  // Button click event to trigger API request
-});
-
 // Calling the the API with selectedIngredients
 $(document).ready(function () {
   let ingredients = ["vodka", "lime"];
@@ -132,30 +33,30 @@ $(document).ready(function () {
     return 0.5 - Math.random();
   });
 
+  const fetchCocktailName = async () => {
+    const response = await fetch(cocktailNameUrl);
+    const data = await response.json();
+    console.log(data);
+    for (i = 0; i < data.length; i++) {
+      let replacedCocktailName = data[i].name.replaceAll(",", "");
+      // let cocktailNameId = data[i].name.replaceAll(',', '').replaceAll(' ', '-')
+      // console.log(cocktailNameId)
+      // console.log(replacedCocktailName)
+      // let cocktailNameString = "s=" + replacedCocktailName
+      // let cocktailImgUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?" + cocktailNameString
+      // renderCocktailImage(cocktailImgUrl)
 
-let count = 0
-
-  function renderCocktailInformation (url, cocktails, ingredients, recipe, cocktailImages, uniqueID) {
-
-    fetch(url)
-    .then(function (response) {
-        return response.json()
-    }).then(function (data) {
-      
-       let replacedCocktailName = cocktails.replaceAll(",", "").split(" ")[0] + uniqueID
-
-
-    
-        let cocktailResults = $("<div>");
+      // Below Code display results
+      let cocktailResults = $("<div>");
       cocktailResults.attr("class", "results-container");
       let cocktailImageEl = $("<img>");
       cocktailImageEl.attr({
-        src: cocktailImages,
+        src: shuffledImages[i],
         class: "cocktail-image",
         width: "20%",
       });
       let cocktailNameEl = $("<h1>");
-      cocktailNameEl.text(cocktails);
+      cocktailNameEl.text(replacedCocktailName);
       let cocktailResultsButton = $("<button>");
       cocktailResultsButton.attr({
         type: "button",
@@ -173,7 +74,7 @@ let count = 0
         role: "dialog",
       });
       let cocktailModalDialog = $("<div>");
-      cocktailModalDialog.attr("class", "modal-dialog modal-dialog-scrollable");
+      cocktailModalDialog.attr("class", "modal-dialog");
       let cocktailModalContent = $("<div>");
       cocktailModalContent.attr("class", "modal-content");
       let cocktailModalHeader = $("<div>");
@@ -187,120 +88,118 @@ let count = 0
       modalCloseButton.html("&times");
       let modalTitle = $("<h4>");
       modalTitle.attr("class", "modal-title");
-      modalTitle.text(cocktails);
-
-      //Modal Body
+      modalTitle.text(replacedCocktailName);
       let modalBody = $("<div>");
       modalBody.attr("class", "modal-body");
-      let modalImageIngredientsContainer = $("<div>");
-      modalImageIngredientsContainer.attr("class", "image-ingredient-container");
-      let modalImageContainer = $("<div>")
-      modalImageContainer.attr("class", "image-container");
-      let modalCocktailImage = $("<img>")
-      modalCocktailImage.attr({
-        class: "image-container",
-        alt: "Cocktail Image",
-        src: cocktailImages,
-        width: "100%"
-      })
-      let modalIngredientsContainer = $("<div>")
-      modalIngredientsContainer.attr("class", "ingredients-container")
-      let modalCocktailIngredients = ingredients
-      let ingredientLiEl = $("<li>")
-      ingredientLiEl.text(modalCocktailIngredients)
-      let cocktailRecipe = recipe
-      let modalRecipeContainer = $("<div>")
-      modalRecipeContainer.attr("class", "recipe-container")
-      let modalRecipeEl = $("<h4>")
-      modalRecipeEl.text(cocktailRecipe)
-      let modalVideoContainer = $("<div>")
-      modalVideoContainer.attr("class", "modal-vid-container")
-      let modalVideoheader = $("<h3>")
-      modalVideoheader.text("Video Tutorial")
-      let modalCocktailVideo = $("<iframe>")
-      modalCocktailVideo.attr(
-        {
-            width: "100%",
-            height: "100%",
-            src: "https://www.youtube.com/embed/" + data.items[0].id.videoId,
-            title: "Cocktail Recipe Tutorial",
-            frameborder: "0",
-            allowfullscreen: "autoplay"
+      let exampleText = $("<p>");
+      exampleText.text("testing");
 
-          }
-      )
-      
-
-
-      
-      
-      //Modal append inside body
-      modalVideoContainer.append(modalVideoheader, modalCocktailVideo)
-      modalRecipeContainer.append(modalRecipeEl)
-      modalIngredientsContainer.append(ingredientLiEl)
-      modalImageContainer.append(modalCocktailImage)
-      modalImageIngredientsContainer.append(modalImageContainer, modalIngredientsContainer)
-      modalBody.append(modalImageIngredientsContainer, modalRecipeContainer, modalVideoContainer)
+      modalBody.append(exampleText);
       cocktailModalHeader.append(modalCloseButton, modalTitle);
       cocktailModalContent.append(cocktailModalHeader, modalBody);
       cocktailModalDialog.append(cocktailModalContent);
       cocktailModalFade.append(cocktailModalDialog);
-      
-      //Results append inside body
       cocktailResults.append(
         cocktailImageEl,
         cocktailNameEl,
         cocktailResultsButton
       );
-
       $(document.body).prepend(cocktailResults, cocktailModalFade);
-       
-
-       
-    
-    
-    })
-  }
-
-      
-
-
-  const fetchCocktailName = async () => {
-    const response = await fetch(cocktailNameUrl);
-    const data = await response.json();
-    console.log(data);
-    for (i = 0; i < data.length; i++) {
-      let cocktailName = data[i].name
-      let newCocktailName = cocktailName.replaceAll(",", "")
-      console.log(newCocktailName)
-      let cocktailIngredients = data[i].ingredients
-      let cocktailInstructions = data[i].instructions
-      let images = shuffledImages[i]
-      let uniqueCount = count++
-      console.log(uniqueCount)
-      
-
-
-      let cocktailSearch = newCocktailName + " cocktail recipe"
-      let youtubeUrl = "https://www.googleapis.com/youtube/v3/search?"
-      let type = "type=video"
-      let part = "&part=snippet"
-      let embed = "&videoEmbeddable=true"
-      let limit = "&maxResults=1"
-      let vidQuery = "&q=" + cocktailSearch
-      let youtubeApiKey = "&key=AIzaSyDAmUN4LtVyfzxkZ57-cquOz6_h1RgKBag"
-    console.log(vidQuery)
-  
-
-      let cocktailVideoUrl = youtubeUrl + type + youtubeApiKey + vidQuery + limit + part + embed
-
-      renderCocktailInformation(cocktailVideoUrl, cocktailName, cocktailIngredients, cocktailInstructions, images, uniqueCount)
     }
   };
   fetchCocktailName();
 
+  // function renderCocktailImage (url) {
 
+  //     fetch(url)
+  //             .then(function (response) {
+  //                 return response.json()
+  //             }).then(function (data) {
+  //             console.log(data.drinks)
+  //             cocktailDrink = data.drinks
+  //             if(cocktailDrink) {
+  //                 let cocktailResults = $("<div>")
+  //                 cocktailResults.attr("class", "results-container")
+  //                 let cocktailImageEl = $("<img>")
+  //                 cocktailImageEl.attr({"src": data.drinks[0].strDrinkThumb, "class": "cocktail-image"})
+  //                 let cocktailNameEl = $("<h1>")
+  //                 cocktailNameEl.text(data.drinks[0].strDrink)
+  //                 cocktailResults.append(cocktailImageEl, cocktailNameEl)
+  //                 $(document.body).prepend(cocktailResults)
+  //             }
+  //         })
 
+  // }
 
+  // const fetchCocktailName = async ()=>{
+  //     const response = await fetch(cocktailNameUrl)
+  //     const data = await response.json()
+  //     console.log(data)
+  //     for(i = 0; i < data.length; i++){
 
+  //         let replacedCocktailName = data[i].name.replaceAll(',', '')
+  //         // console.log(replacedCocktailName)
+  //         let cocktailNameString = "s=" + replacedCocktailName
+  //         let cocktailImgUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?" + cocktailNameString
+  //         renderCocktailImage(cocktailImgUrl)
+
+  //     }
+  // }
+
+  // fetchCocktailName()
+
+  // Sample data -
+  const cocktails = [
+    {
+      name: "Margarita",
+      image: "margaritaImage.jpg",
+      ingredients: ["Tequila", "Triple sec", "Lime juice"],
+      recipe: "Mix tequila, triple sec, and lime juice. Serve over ice.",
+      video:
+        '<iframe width="100%" height="100" src="https://www.youtube.com/embed/FE-VFXRZgLI?si=q2bJnVmW_vvhAleg" title="YouTube video player" frameborder="0" allowfullscreen; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>',
+    },
+  ];
+
+  // Function to open the modal and populate it with data
+  function openModal(cocktailIndex) {
+    const modal = document.getElementById("cocktailModal");
+    const cocktail = cocktails[cocktailIndex];
+    document.getElementById("cocktailName").innerText = cocktail.name;
+    document.getElementById("cocktailImage").src = cocktail.image;
+
+    // Populate ingredients list
+    const ingredientsList = document.getElementById("ingredientsListContainer");
+    ingredientsList.innerHTML = "<h3><strong>Ingredients</strong></h3>";
+    for (const ingredient of cocktail.ingredients) {
+      const listItem = document.createElement("li");
+      listItem.innerText = ingredient;
+      ingredientsList.appendChild(listItem);
+    }
+
+    // Populate recipe text
+    const recipeText = document.getElementById("recipeTextContainer");
+    recipeText.innerHTML = `<h3><strong>Recipe</strong></h3>${cocktail.recipe}`;
+
+    // Populate video
+    const videoContainer = document.getElementById("video");
+    videoContainer.innerHTML = cocktail.video;
+    modal.style.display = "block";
+  }
+
+  //     let youtubeUrl = "https://www.googleapis.com/youtube/v3/search?"
+  //     let type = "type=video"
+  //     let part = "&part=snippet"
+  //     let embed = "&videoEmbeddable=true"
+  //     let vidName = "&q="
+  //     let youtubeApiKey = "&key=AIzaSyDhUjUoChQOl2tad0gxSE8SKAwMDYHzEq0"
+
+  //     let cocktailName = "how to make margarita"
+
+  //     let finalUrl = youtubeUrl + type + youtubeApiKey + vidName + cocktailName + part + embed
+
+  //     fetch(finalUrl)
+  //         .then(function (response) {
+  //             return response.json()
+  //         }).then(function (data) {
+  //            console.log(data)})
 });
