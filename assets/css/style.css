@@ -1,27 +1,32 @@
-/* wE MAY NEED TO CREATE MEDIA QUERIES AS SOME BOOTSTRAP ASPECTS ARE NOT RESPONSIVE*/
+/* WE MAY NEED TO CREATE MEDIA QUERIES AS SOME BOOTSTRAP ASPECTS ARE NOT RESPONSIVE*/
 
-/* Page background */
-body {
-    background-color: rgba(255, 255, 255, 0.137);
-}
 /* Disables default Bootstrap navbar background */
 nav {
     background: black !important;
     height: 170px;
 }
-/* Website title */
-h1 {
-  font-family: "Barriecito";
-  font-size: 70px;
-  text-align: center;
+
+.nav-div {
+    display: flex;
+    flex-direction: column;
 }
 
+.page-links {
+    text-transform: none;
+    font-family: "Koulen";
+    font-size: 20px;
+}
+
+.navbar-toggler, .collapsed {
+    border: none;
+}
+
+/* Website title */
 .neon{
+    font-family: "Barriecito";
+    font-size: 70px;
+    text-align: center;
     color: #ffffff;
-    position: absolute; 
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); 
     font-weight: 400;
     letter-spacing: 8px;
     text-shadow: 1px 0px 4px #000000fa, 2px 0px 4px #d5f3ff, 3px 0px 4px #ffd5ff, 2px 0px 3px #d42cc0, 2px 3px 15px #ebd988f7, 2px 0px 15px, 5px 0px 125px, 20px 0vw 200px #cff39e,40px 0vw 200px #dcf4b4;
@@ -52,11 +57,16 @@ h1 {
 
 /* Section titles incl. jumbotron, sections and cards */
 h2, h3, h5 {
-    font-family: "Outfit";
+    font-family: "Koulen";
 }
 
+#search-title {
+    margin-left: 15px;
+    font-size: 50px;
+}
 #fav-page-title {
     margin-top: 30px;
+    margin-left: 15px;
 }
 
 .fancy-title {
@@ -65,7 +75,7 @@ h2, h3, h5 {
 
 /* Page text */
 p {
-    font-family: "Outfit";
+    font-family: "Jost";
 }
 
 #intro-txt {
@@ -82,6 +92,8 @@ p {
     background-image: linear-gradient(silver, white);
     border: 2px solid black;
     border-radius: 4px !important;
+    font-weight: bold;
+    font-family: "Jost";
 }
 /* Button to trigger search for results*/
 #search-btn {
@@ -90,6 +102,9 @@ p {
     margin-top: 30px;
     margin-left: 60px;
     border: 2px solid rgb(38, 37, 37);
+    color: rgb(255, 255, 255);
+    font-family: "Poppins";
+    
 }
 /* General buttons*/
 .btn {

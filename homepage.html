@@ -13,10 +13,9 @@
     <!--Google fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Anton&family=Barriecito&family=Covered+By+Your+Grace&family=Just+Me+Again+Down+Here&family=Nanum+Pen+Script&family=Outfit:wght@200;300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barriecito&family=Bayon&family=Boogaloo&family=Covered+By+Your+Grace&family=DM+Serif+Display&family=Jost&family=Koulen&family=Lexend:wght@400;700&family=Luckiest+Guy&family=Poppins:ital,wght@0,600;0,700;0,900;1,700;1,800&family=Sigmar&family=Tilt+Warp&display=swap" rel="stylesheet">
     <!--The link to css sheet-->
     <link rel="stylesheet" href="assets/css/style.css" />
     <!--Website title-->
@@ -25,49 +24,53 @@
 
   <body>
     <header>
-        <!--Navigation bar section, including logo, title and favourites icon-->
-        <nav class="navbar">
-          <div class="container-fluid">
-             <!-- <a class="navbar-logo" href="#">
-              <img
-                src="assets/images/6.svg"
-                alt="Logo"
-                width="110"
-                height="120"
-                class="d-inline-block align-text-top"
-              />
-            </a> -->
-            <!--Website title-->
-            <h1 class="neon" id="website-title" data-text="U"><span class="flicker-fast">Th</span>e<span class="flicker-slow">&puncsp;Dru</span>nk<span class="flicker-fast">&puncsp;Ch</span>ef</h1>
-            <!--Navigation Tabs-->
-                <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                  <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true"><a href="homepage.html">Home</a></button>
-                  <button class="nav-link" id="nav-favourites-tab" data-bs-toggle="tab" data-bs-target="#nav-favourites" type="button" role="tab" aria-controls="nav-favourites" aria-selected="false"><a href="favourites.html">Favourites</a></button>
+        <!--Navigation bar section, including title and nav links-->
+             <!--Navigation Links-->
+             <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid nav-div">
+                     <!--Website title-->
+                    <h1 class="neon" id="website-title" data-text="U"><span class="flicker-fast">Th</span>e<span class="flicker-slow">&puncsp;Dru</span>nk<span class="flicker-fast">&puncsp;Ch</span>ef</h1>
+                     <!--Responsive menu button-->
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon navbar-dark"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link active page-links link-light" aria-current="page" href="homepage.html">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link page-links link-light" href="assets/favourites.html">Favourites</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </nav>
-              <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"></div>
-                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-favourites-tab"></div>
-          </div>
+
         <!--Jumbotron section including page intro-->
         <div class="h-100 p-5 clearfix intro">
             <img src="assets/images/6.svg" class="col-md-6 float-md-end mb-3 ms-md-3 intro-img" alt="">
            <p id="intro-txt">Welcome to <span class="fancy-title">The Drunk Chef</span>, the ultimate destination for all cocktail lovers! We believe that the best cocktails are made with a dash of convenience and a sprinkle of creativity. With our innovative platform, you can now become an expert mixologist from the comfort of your own home. Forget about running to the store for specific ingredients; simply select the items you already have in your house, and we'll conjure up a captivating collection of cocktail recipes just for you. Embrace your inner chef and let your taste buds embark on a delightful journey!
         </p>
         </div>
+        <!--End of header section-->
       </header>
+
 <!--Container for search button and display box-->
+<h3 id="search-title">Start here:</h3>
 <div class="container-fluid">
+    <p>Select your ingredients to search for your tailored cocktail recipes.</p>
     <div class="row" id="search-sec">
         <div class="col">
-            <h3>Start here:</h3>
           <a href="#" class="btn shadow p-3 w-75" id="select-btn">Select your ingredients</a>
           <a href="#" class="btn btn-dark shadow-lg w-50" id="search-btn">GET MY RECIPES</a>
         </div>
         <!--Container for ingredient selection-->
         <div class="col">
           <div class="row" id="selected-ingredients">
+            <h5> You have selected:</h5>
             <div class="col">
-                Ingredients listed in here. 
+                <p class="list-of-ing">Ingredients listed in here.</p> 
             </div>
           </div>
         </div>
@@ -119,7 +122,7 @@
         <span class="mb-3 mb-md-0">© 2024 Bootcamp Group 9</span>
       </div>
       <!--Back to top link-->
-      <a class="back-to-top" href="#"><p>Back to top ↑</p></a>
+      <a class="back-to-top" href="#top"><p>Back to top ↑</p></a>
       <!--Social media icons/links-->
       <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
         <li class="ms-3">
@@ -157,3 +160,13 @@
   </body>
   <!--End of page-->
 </html>
+
+             <!-- <a class="navbar-logo" href="#">
+              <img
+                src="assets/images/6.svg"
+                alt="Logo"
+                width="110"
+                height="120"
+                class="d-inline-block align-text-top"
+              />
+            </a> -->
