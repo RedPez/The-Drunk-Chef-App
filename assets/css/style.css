@@ -16,6 +16,13 @@ nav {
   font-family: "Jost";
   font-size: 20px;
   font-weight: bold;
+  color: rgb(252, 252, 252) !important;
+}
+
+/* Edit color here to change to black on hover */
+.page-links:hover {
+background-color: #D8EF7E;
+color: black;
 }
 
 .navbar-toggler,
@@ -111,10 +118,10 @@ p {
 }
 
 /* Multi-select button to choose ingredients*/
-
 .search-btns {
     margin-top: 25px;
 }
+
 #select-btn {
   background-image: linear-gradient(silver, white);
   border: 2px solid black;
@@ -122,6 +129,11 @@ p {
   font-weight: bold;
   font-family: "Jost";
 }
+
+#search-btn:hover {
+  background: rgb(72, 70, 70);
+}
+
 /* Button to trigger search for results*/
 #search-btn {
   border-radius: 3px !important;
