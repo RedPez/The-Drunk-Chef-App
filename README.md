@@ -53,9 +53,10 @@ How to use the website
 ### Build status
 We prioritise seamless functionality and recognise that there is always room for improvement. This being the case we have reflected on some aspects of our website that we hope to improve in future iterations: 
 - Finding a solution for users to select from a wider range of ingredients
-- point 2
-- point 3
-- point 4
+- We are exploring ways to implement a user profile system that allows individuals to create accounts, customize their preferences
+- To further engage our users and foster a sense of community, we are planning to integrate social media sharing functionalities. This will enable users to share their favorite cocktail recipes, experiences, and even their own creations directly from the platform
+- To enhance the user interaction within the community, we're considering adding a rating and review system. 
+
   
 ### License 
 MIT
