@@ -69,11 +69,8 @@
     <p id="search-heading">Select your ingredients to search for your tailored cocktail recipes.</p>
     <div class="row" id="search-sec">
         <div class="col search-btns">
-          <select
-      name="multiple-checkboxes"
-      id="multiple-checkboxes"
-      multiple
-    ></select>
+          <select name="multiple-checkboxes" id="multiple-checkboxes" multiple> 
+          </select>
           <a href="#" class="btn btn-dark shadow-lg w-50" id="search-btn">GET MY RECIPES</a>
         </div>
         <!--Container for ingredient selection-->
@@ -81,49 +78,21 @@
           <div class="row" id="selected-ingredients">
             <h5> You have selected:</h5>
             <div class="col">
-                <p class="list-of-ing">Ingredients listed in here.</p> 
+                <p class="list-of-ing">Your selected ingredients will appear here</p> 
             </div>
           </div>
         </div>
   </div>
   <!--Container for search result cards and example cards-->
   <h3 id="results-title">Choose your recipe:</h3>
-  <div class="container-fluid" id="results-sec">
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col">
-              <div class="card h-100 result-card">
-                <img src="assets/images/4.png" class="card-img-top w-auto h-auto" alt="">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <a href="#" class="btn btn-dark">View Recipe</a>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100 result-card">
-                <img src="assets/images/4.png" class="card-img-top w-auto h-auto" alt="">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <a href="#" class="btn btn-dark">View Recipe</a>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100 result-card">
-                <img src="assets/images/4.png" class="card-img-top w-auto h-auto" alt="">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="btn btn-dark">View Recipe</a>
-                </div>
-              </div>
-            </div>
+  <div class="container-fluid results-sec">
+        <div class="row row-cols-1 row-cols-md-3 g-4 cardRows">
+            
           </div>
         </div>
 
     <!--ADD MODAL-->
+<div class="modal-sec"></div>
 
     <!--Footer section-->
     <footer
@@ -153,7 +122,7 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <!--Link to  JS-->
+    <!--Link to  Boostrap Multiselect-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
     <link
       rel="stylesheet"
@@ -167,8 +136,7 @@
     <!--Link to JS with functional script-->
     <script src="assets/js/functionality.js"></script>
     <script src="assets/js/multiselect.js"></script>
-    <!--Link to JS with with UI-related script-->
-    <script src="assets/js/style.js"></script>
+    <script src="assets/js/favourites.js"></script>
   </body>
   <!--End of page-->
 </html>

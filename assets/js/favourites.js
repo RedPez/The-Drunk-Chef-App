@@ -32,3 +32,9 @@ function toggleFavorite(button) {
     // Visually indicate the favorite state on the button for better user experience
     button.classList.toggle('btn-warning', !isFavorite);
   }
+
+
+
+  
+
+  // By the end of this we should be able to click on the favourites icon and have it save the card title to local storage. Upon visiting the favourites page, any favourited cards should display using a combination of the above code that brings up the cocktail name and another function that takes the cocktail name as a parameter to fetch the cocktail data from the API info and display the card. Then we add the same on-click functionality to open moda as homepage.
