@@ -44,7 +44,10 @@ let count = 0;
         return response.json()
     }).then(function (data) {
       
-       let replacedCocktailName = cocktails.replaceAll(",", "").split(" ")[0] + uniqueID
+      
+      let sanitizedCocktailName = cocktails.replace(/[^a-zA-Z0-9]/g, "-");
+       let replacedCocktailName = sanitizedCocktailName + uniqueID
+       console.log(replacedCocktailName)
 
     // This has been commented out - there is a container in the html
       //   let cocktailResults = $("<div>");
@@ -84,7 +87,7 @@ let count = 0;
         type: "button",
         class: "btn btn-dark",
         "data-bs-toggle": "modal",
-        "data-bs-target": "#myModal",
+        "data-bs-target": "#" + replacedCocktailName,
       });
       cocktailResultsButton.text("View Recipe");
       // Card save to favourites button
@@ -102,9 +105,9 @@ let count = 0;
       // Modal
 
       let cocktailModalFade = $("<div>");
-      cocktailModalFade.attr({
+      cocktailModalFade.prop({
         class: "modal fade",
-        id: "myModal",
+        id: replacedCocktailName,
         role: "dialog",
       });
       let cocktailModalDialog = $("<div>");
@@ -216,7 +219,7 @@ let count = 0;
       let embed = "&videoEmbeddable=true"
       let limit = "&maxResults=1"
       let vidQuery = "&q=" + cocktailSearch
-      let youtubeApiKey = "&key=AIzaSyDhUjUoChQOl2tad0gxSE8SKAwMDYHzEq0"
+      let youtubeApiKey = "&key=AIzaSyDcMGNlsgbTf4ABkQcsMbTxGf1UQfdLa0E"
     console.log(vidQuery)
   
 
