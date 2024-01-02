@@ -13,21 +13,21 @@ $(document).ready(function () {
     apiKey;
 
   let images = [
-    "./images/cocktails1.jpg",
-    "./images/cocktail2.jpeg",
-    "./images/cocktail3.jpg",
-    "./images/cocktail4.jpg",
-    "./images/cocktail5.jpg",
-    "./images/cocktail6.jpg",
-    "./images/cocktail7.jpg",
-    "./images/cocktail8.jpg",
-    "./images/cocktail9.jpg",
-    "./images/cocktail10.jpg",
-    "./images/cocktail11.jpg",
-    "./images/cocktail12.jpg",
-    "./images/cocktail13.jpg",
-    "./images/cocktail14.jpg",
-    "./images/cocktail15.jpg",
+    "./assets/images/cocktail1.jpg",
+    "./assets/images/cocktail2.jpeg",
+    "./assets/images/cocktail3.jpg",
+    "./assets/images/cocktail4.jpg",
+    "./assets/images/cocktail5.jpg",
+    "./assets/images/cocktail6.jpg",
+    "./assets/images/cocktail7.jpg",
+    "./assets/images/cocktail8.jpg",
+    "./assets/images/cocktail9.jpg",
+    "./assets/images/cocktail10.jpg",
+    "./assets/images/cocktail11.jpg",
+    "./assets/images/cocktail12.jpg",
+    "./assets/images/cocktail13.jpg",
+    "./assets/images/cocktail14.jpg",
+    "./assets/images/cocktail15.jpg",
   ];
 
   
@@ -44,7 +44,10 @@ let count = 0;
         return response.json()
     }).then(function (data) {
       
-       let replacedCocktailName = cocktails.replaceAll(",", "").split(" ")[0] + uniqueID
+      
+      let sanitizedCocktailName = cocktails.replace(/[^a-zA-Z0-9]/g, "-");
+       let replacedCocktailName = sanitizedCocktailName + uniqueID
+       console.log(replacedCocktailName)
 
     // This has been commented out - there is a container in the html
       //   let cocktailResults = $("<div>");
@@ -56,17 +59,17 @@ let count = 0;
       // Creates card container
       let resultsCard = $("<div>");
       resultsCard.attr("class", "card h-100 result-card");
-      // Creates card body
-      let cardBody = $("<div>");
-      cardBody.attr("class", "card-body");
       // Card image
       let cocktailImageEl = $("<img>");
       cocktailImageEl.attr({
         src: cocktailImages,
         class: "card-img-top w-auto h-auto",
         // width: "50%", - we have width set in bootstrap class
-        alt: "",
+        alt: "image of cocktail",
       });
+      // Creates card body
+      let cardBody = $("<div>");
+      cardBody.attr("class", "card-body");
       // Card title
       let cocktailNameEl = $("<h5>"); // changed to match bootstrap
       cocktailNameEl.text(cocktails);
@@ -79,12 +82,12 @@ let count = 0;
       let buttonsDiv = $("<div>");
       buttonsDiv.attr("class", "btns-div");
       // Card button to open modal - changed to match html format
-      let cocktailResultsButton = $("<a>");
+      let cocktailResultsButton = $("<button>");
       cocktailResultsButton.attr({
-        href: "#",
+        type: "button",
         class: "btn btn-dark",
-        "data-toggle": "modal",
-        "data-target": "#myModal",
+        "data-bs-toggle": "modal",
+        "data-bs-target": "#" + replacedCocktailName,
       });
       cocktailResultsButton.text("View Recipe");
       // Card save to favourites button
@@ -97,21 +100,14 @@ let count = 0;
       let starIcon = $("<i>");
       starIcon.attr("class", "fa-regular fa-star");
 
-      // Results append inside cards
-      resultsRows.append(resultsColumns);
-      resultsColumns.append(resultsCard);
-      resultsCard.append(cocktailImageEl, cardBody);
-      cardBody.append(cocktailNameEl,cardText,cocktailResultsButton,buttonsDiv);
-      buttonsDiv.append(cocktailResultsButton,favRecipeBtn);
-      favRecipeBtn.append(starIcon);
 
 
       // Modal
 
       let cocktailModalFade = $("<div>");
-      cocktailModalFade.attr({
+      cocktailModalFade.prop({
         class: "modal fade",
-        id: "myModal",
+        id: replacedCocktailName,
         role: "dialog",
       });
       let cocktailModalDialog = $("<div>");
@@ -124,11 +120,11 @@ let count = 0;
       modalCloseButton.attr({
         type: "button",
         class: "close",
-        "data-dismiss": "modal",
+        "data-bs-dismiss": "modal",
       });
       modalCloseButton.html("&times");
       let modalTitle = $("<h4>");
-      modalTitle.attr("class", "modal-title");
+      modalTitle.attr("class", "modal-title fs-5");
       modalTitle.text(cocktails);
 
       //Modal Body
@@ -183,9 +179,16 @@ let count = 0;
       cocktailModalContent.append(cocktailModalHeader, modalBody);
       cocktailModalDialog.append(cocktailModalContent);
       cocktailModalFade.append(cocktailModalDialog);
+
+      // Results append inside cards
+      favRecipeBtn.append(starIcon);
+      buttonsDiv.append(cocktailResultsButton, favRecipeBtn);
+      cardBody.append(cocktailNameEl, cardText, buttonsDiv);
+      resultsCard.append(cocktailImageEl, cardBody)
+      resultsColumns.append(resultsCard);
+      resultsRows.append(resultsColumns, cocktailModalFade);
       
 // Need to create the onclick functionality to open modal
-      $(document.body).prepend(cocktailModalFade);
     
     })
   }
@@ -216,7 +219,7 @@ let count = 0;
       let embed = "&videoEmbeddable=true"
       let limit = "&maxResults=1"
       let vidQuery = "&q=" + cocktailSearch
-      let youtubeApiKey = "&key=AIzaSyC7wHq1P-HrvJpFQf-ivJ_fHfAFFVO1BA4"
+      let youtubeApiKey = "&key=AIzaSyDcMGNlsgbTf4ABkQcsMbTxGf1UQfdLa0E"
     console.log(vidQuery)
   
 
