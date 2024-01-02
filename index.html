@@ -3,6 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@2.0.1/dist/css/multi-select-tag.css"
+    />
+    <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@2.0.1/dist/js/multi-select-tag.js"></script>
+    
     <!--The link to Bootstrap 5-->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -62,7 +69,11 @@
     <p id="search-heading">Select your ingredients to search for your tailored cocktail recipes.</p>
     <div class="row" id="search-sec">
         <div class="col search-btns">
-          <a href="#" class="btn shadow p-3 w-75" id="select-btn">Select your ingredients</a>
+          <select
+      name="multiple-checkboxes"
+      id="multiple-checkboxes"
+      multiple
+    ></select>
           <a href="#" class="btn btn-dark shadow-lg w-50" id="search-btn">GET MY RECIPES</a>
         </div>
         <!--Container for ingredient selection-->
@@ -155,6 +166,7 @@
     ></script>
     <!--Link to JS with functional script-->
     <script src="assets/js/functionality.js"></script>
+    <script src="assets/js/multiselect.js"></script>
     <!--Link to JS with with UI-related script-->
     <script src="assets/js/style.js"></script>
   </body>
