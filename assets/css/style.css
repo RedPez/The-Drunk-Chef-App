@@ -122,12 +122,13 @@ p {
     margin-top: 25px;
 }
 
-#select-btn {
+#multiple-checkboxes {
   background-image: linear-gradient(silver, white);
-  border: 2px solid black;
+  border: 2px solid black !important;
   border-radius: 4px !important;
   font-weight: bold;
   font-family: "Jost";
+  width: 50%;
 }
 
 #search-btn:hover {
@@ -147,6 +148,17 @@ p {
 .btn {
   border-radius: 0px !important;
 }
+.btns-div {
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+}
+.fav-btn {
+  text-transform: none;
+  color: black;
+  font-size: 30px;
+}
+
 /* Section that displays selected ingredients*/
 #selected-ingredients {
   background-image: linear-gradient(
@@ -166,7 +178,7 @@ p {
 #search-sec {
   margin-bottom: 30px;
 }
-#results-sec,
+.results-sec,
 #fav-sec {
   margin-top: 30px;
   margin-bottom: 20px;
