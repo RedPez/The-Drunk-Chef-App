@@ -3,21 +3,27 @@
 // Calling the the API with selectedIngredients
 $(document).ready(function () {
   let images = [
-    "./assets/images/cocktail1.jpg",
-    "./assets/images/cocktail2.jpeg",
-    "./assets/images/cocktail3.jpg",
-    "./assets/images/cocktail4.jpg",
-    "./assets/images/cocktail5.jpg",
-    "./assets/images/cocktail6.jpg",
-    "./assets/images/cocktail7.jpg",
-    "./assets/images/cocktail8.jpg",
-    "./assets/images/cocktail9.jpg",
-    "./assets/images/cocktail10.jpg",
-    "./assets/images/cocktail11.jpg",
-    "./assets/images/cocktail12.jpg",
-    "./assets/images/cocktail13.jpg",
-    "./assets/images/cocktail14.jpg",
-    "./assets/images/cocktail15.jpg",
+    "./assets/images/image-5.jpg",
+    "./assets/images/image-6.jpg",
+    "./assets/images/image-7.jpg",
+    "./assets/images/image-8.jpg",
+    "./assets/images/image-9.jpg",
+    "./assets/images/image-10.jpg",
+    "./assets/images/image-11.jpg",
+    "./assets/images/image-12.jpg",
+    "./assets/images/image-13.jpg",
+    "./assets/images/image-14.jpg",
+    "./assets/images/image-15.jpg",
+    "./assets/images/image-16.jpg",
+    "./assets/images/image-17.jpg",
+    "./assets/images/image-18.jpg",
+    "./assets/images/image-19.jpg",
+    "./assets/images/image-20.jpg",
+    "./assets/images/image-21.jpg",
+    "./assets/images/image-22.jpg",
+    "./assets/images/image-23.jpg",
+    "./assets/images/image-24.jpg",
+    "./assets/images/image-25.jpg",
   ];
 
   let shuffledImages = images.sort(function (a, b) {
@@ -42,9 +48,6 @@ $(document).ready(function () {
         let replacedCocktailName =
           cocktails.replaceAll(",", "").split(" ")[0] + uniqueID;
 
-        // This has been commented out - there is a container in the html
-        //   let cocktailResults = $("<div>");
-        // cocktailResults.attr("class", "results-container");
         let resultsRows = $(".cardRows");
         // Creates columns
         let resultsColumns = $("<div>");
@@ -57,7 +60,6 @@ $(document).ready(function () {
         cocktailImageEl.attr({
           src: cocktailImages,
           class: "card-img-top w-auto h-auto",
-          // width: "50%", - we have width set in bootstrap class
           alt: "image of cocktail",
         });
         // Creates card body
@@ -70,9 +72,7 @@ $(document).ready(function () {
         // Testing card text
         let cardText = $("<p>");
         cardText.attr("class", "card-text");
-        cardText.text(
-          "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
-        );
+        cardText.text("Click the button below to view your recipe!");
         // Div that contains both fav and open modal buttons
         let buttonsDiv = $("<div>");
         buttonsDiv.attr("class", "btns-div");
@@ -95,8 +95,7 @@ $(document).ready(function () {
         let starIcon = $("<i>");
         starIcon.attr("class", "fa-regular fa-star");
 
-        // Modal
-
+        // Modal container
         let cocktailModalFade = $("<div>");
         cocktailModalFade.prop({
           class: "modal fade",
@@ -119,8 +118,8 @@ $(document).ready(function () {
           "data-bs-dismiss": "modal",
         });
         modalCloseButton.html("&times");
-        let modalTitle = $("<h4>");
-        modalTitle.attr("class", "modal-title fs-5");
+        let modalTitle = $("<h2>");
+        modalTitle.attr("class", "modal-title fs-2");
         modalTitle.text(cocktails);
 
         //Modal Body
@@ -142,17 +141,22 @@ $(document).ready(function () {
         });
         let modalIngredientsContainer = $("<div>");
         modalIngredientsContainer.attr("class", "ingredients-container");
+        let modalIngredientsTitle = $("<h4>");
+        modalIngredientsTitle.text("Ingredients");
         let modalCocktailIngredientsUlEl = $("<ul>");
         let modalCocktailIngredients = ingredients;
         modalCocktailIngredients.forEach(function (ingredient) {
           let ingredientLiEl = $("<li>");
+          ingredientLiEl.attr("class", "ing-list");
           ingredientLiEl.text(ingredient);
           modalCocktailIngredientsUlEl.append(ingredientLiEl);
         });
         let cocktailRecipe = recipe;
         let modalRecipeContainer = $("<div>");
         modalRecipeContainer.attr("class", "recipe-container");
-        let modalRecipeEl = $("<h4>");
+        let modalRecipeTitle = $("<h4>");
+        modalRecipeTitle.text("Recipe");
+        let modalRecipeEl = $("<p>");
         modalRecipeEl.text(cocktailRecipe);
         let modalVideoContainer = $("<div>");
         modalVideoContainer.attr("class", "modal-vid-container");
@@ -160,8 +164,6 @@ $(document).ready(function () {
         modalVideoheader.text("Video Tutorial");
         let modalCocktailVideo = $("<iframe>");
         modalCocktailVideo.attr({
-          width: "100%",
-          height: "100%",
           src: "https://www.youtube.com/embed/" + data.items[0].id.videoId,
           title: "Cocktail Recipe Tutorial",
           frameborder: "0",
@@ -170,8 +172,11 @@ $(document).ready(function () {
 
         //Modal append inside body
         modalVideoContainer.append(modalVideoheader, modalCocktailVideo);
-        modalRecipeContainer.append(modalRecipeEl);
-        modalIngredientsContainer.append(modalCocktailIngredientsUlEl);
+        modalRecipeContainer.append(modalRecipeTitle, modalRecipeEl);
+        modalIngredientsContainer.append(
+          modalIngredientsTitle,
+          modalCocktailIngredientsUlEl
+        );
         modalImageContainer.append(modalCocktailImage);
         modalImageIngredientsContainer.append(
           modalImageContainer,
@@ -182,7 +187,7 @@ $(document).ready(function () {
           modalRecipeContainer,
           modalVideoContainer
         );
-        cocktailModalHeader.append(modalCloseButton, modalTitle);
+        cocktailModalHeader.append(modalTitle, modalCloseButton);
         cocktailModalContent.append(cocktailModalHeader, modalBody);
         cocktailModalDialog.append(cocktailModalContent);
         cocktailModalFade.append(cocktailModalDialog);
@@ -194,8 +199,6 @@ $(document).ready(function () {
         resultsCard.append(cocktailImageEl, cardBody);
         resultsColumns.append(resultsCard);
         resultsRows.append(resultsColumns, cocktailModalFade);
-
-        // Need to create the onclick functionality to open modal
       });
   }
 
@@ -231,7 +234,7 @@ $(document).ready(function () {
       let embed = "&videoEmbeddable=true";
       let limit = "&maxResults=1";
       let vidQuery = "&q=" + cocktailSearch;
-      let youtubeApiKey = "&key=AIzaSyDhUjUoChQOl2tad0gxSE8SKAwMDYHzEq0";
+      let youtubeApiKey = "&key=AIzaSyBrQ1rW67Rt3qrtIZVGV6bXzTyNxmSReA8";
       console.log(vidQuery);
 
       let cocktailVideoUrl =
