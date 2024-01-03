@@ -143,9 +143,13 @@ let count = 0;
       })
       let modalIngredientsContainer = $("<div>")
       modalIngredientsContainer.attr("class", "ingredients-container")
+      let modalCocktailIngredientsUlEl = $("<ul>")
       let modalCocktailIngredients = ingredients
-      let ingredientLiEl = $("<li>")
-      ingredientLiEl.text(modalCocktailIngredients)
+      modalCocktailIngredients.forEach(function(ingredient){
+        let ingredientLiEl = $("<li>")
+      ingredientLiEl.text(ingredient)
+      modalCocktailIngredientsUlEl.append(ingredientLiEl)
+      })
       let cocktailRecipe = recipe
       let modalRecipeContainer = $("<div>")
       modalRecipeContainer.attr("class", "recipe-container")
@@ -171,7 +175,7 @@ let count = 0;
       //Modal append inside body
       modalVideoContainer.append(modalVideoheader, modalCocktailVideo)
       modalRecipeContainer.append(modalRecipeEl)
-      modalIngredientsContainer.append(ingredientLiEl)
+      modalIngredientsContainer.append(modalCocktailIngredientsUlEl)
       modalImageContainer.append(modalCocktailImage)
       modalImageIngredientsContainer.append(modalImageContainer, modalIngredientsContainer)
       modalBody.append(modalImageIngredientsContainer, modalRecipeContainer, modalVideoContainer)
@@ -219,7 +223,7 @@ let count = 0;
       let embed = "&videoEmbeddable=true"
       let limit = "&maxResults=1"
       let vidQuery = "&q=" + cocktailSearch
-      let youtubeApiKey = "&key=AIzaSyDcMGNlsgbTf4ABkQcsMbTxGf1UQfdLa0E"
+      let youtubeApiKey = "&key=AIzaSyC7wHq1P-HrvJpFQf-ivJ_fHfAFFVO1BA4"
     console.log(vidQuery)
   
 
