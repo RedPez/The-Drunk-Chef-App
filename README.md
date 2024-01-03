@@ -5,12 +5,14 @@
 ## Table of Contents
 1. [About](#about-the-project)
 2. [Technologies](#technologies)
-3. [Key Features](#key-features)
-4. [Usage](#usage)
-5. [Build Status](#build-status)
-6. [License](#license)
-7. [Credits](#credits)
-8. [Creators](#creators)
+3. [User Story](#user-story)
+4. [Acceptance Criteria](#acceptance-criteria)
+5. [Key Features](#key-features)
+6. [Usage](#usage)
+7. [Build Status](#build-status)
+8. [License](#license)
+9. [Credits](#credits)
+10. [Creators](#creators)
 
 ## About the project
 
@@ -35,6 +37,17 @@ This project was created with:
 - Google APIs
 - API Ninjas 
 - Canva
+
+### User Story
+AS AN alcohol drinker, I WANT a cocktail recipe app that will take ingredients as parameters and return relevant cocktail recipes SO THAT I can create cocktails with items I already have in the house.
+
+### Acceptance Criteria 
+The app is ready when the user is able to select items from a list of ingredients
+The app is ready when selected items are inserted as parameters in a search and returns relevant recipes
+The app is ready when the user can favorite recipes for later retrieval
+As a user I should be able to navigate the website with ease 
+As a user I should be able to search for a recipe at any interaction point
+The app is ready when it fetches data from two separate APIs - one being the cocktail recipes and other being youtube video tutorial
 
 ### Key Features
 - Interactive search function that allows you to select ingredients using a dropdown list.
