@@ -222,7 +222,7 @@
         let embedFav = "&videoEmbeddable=true"
         let limitFav = "&maxResults=1"
         let favVidQuery = "&q=" + favCocktailSearch
-        let favYoutubeApiKey = "&key=AIzaSyBDY7-E1emeab9V-98uTKO4Hpn95R64xaY"
+        let favYoutubeApiKey = "&key=AIzaSyBrQ1rW67Rt3qrtIZVGV6bXzTyNxmSReA8"
       console.log(favVidQuery)
     
     
