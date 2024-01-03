@@ -82,7 +82,7 @@ $(document).ready(function () {
           type: "button",
           class: "btn btn-dark",
           "data-bs-toggle": "modal",
-          "data-bs-target": "#myModal",
+          "data-bs-target": "#" + replacedCocktailName,
         });
         cocktailResultsButton.text("View Recipe");
         // Card save to favourites button
@@ -98,9 +98,9 @@ $(document).ready(function () {
         // Modal
 
         let cocktailModalFade = $("<div>");
-        cocktailModalFade.attr({
+        cocktailModalFade.prop({
           class: "modal fade",
-          id: "myModal",
+          id: replacedCocktailName,
           role: "dialog",
         });
         let cocktailModalDialog = $("<div>");
@@ -142,9 +142,13 @@ $(document).ready(function () {
         });
         let modalIngredientsContainer = $("<div>");
         modalIngredientsContainer.attr("class", "ingredients-container");
+        let modalCocktailIngredientsUlEl = $("<ul>");
         let modalCocktailIngredients = ingredients;
-        let ingredientLiEl = $("<li>");
-        ingredientLiEl.text(modalCocktailIngredients);
+        modalCocktailIngredients.forEach(function (ingredient) {
+          let ingredientLiEl = $("<li>");
+          ingredientLiEl.text(ingredient);
+          modalCocktailIngredientsUlEl.append(ingredientLiEl);
+        });
         let cocktailRecipe = recipe;
         let modalRecipeContainer = $("<div>");
         modalRecipeContainer.attr("class", "recipe-container");
@@ -167,7 +171,7 @@ $(document).ready(function () {
         //Modal append inside body
         modalVideoContainer.append(modalVideoheader, modalCocktailVideo);
         modalRecipeContainer.append(modalRecipeEl);
-        modalIngredientsContainer.append(ingredientLiEl);
+        modalIngredientsContainer.append(modalCocktailIngredientsUlEl);
         modalImageContainer.append(modalCocktailImage);
         modalImageIngredientsContainer.append(
           modalImageContainer,
@@ -245,3 +249,5 @@ $(document).ready(function () {
   };
   $("#search-btn").on("click", fetchCocktailName);
 });
+
+// test

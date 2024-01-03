@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  let allIngredients = [];
   // Your options data
   var drinksData = [
     "Vodka",
@@ -66,6 +67,7 @@ $(document).ready(function () {
       bgColor: "#eaffe6",
     },
     onChange: function (values) {
+      allIngredients = values;
       updateSelectedIngredients(values);
     },
   });
@@ -76,18 +78,18 @@ $(document).ready(function () {
       .map(function (option) {
         var drinkIndex = parseInt(option.value) - 1;
         var selectedDrink = drinksData[drinkIndex];
-        console.log(
+        /*console.log(
           "Value:",
           option.value,
           "Index:",
           drinkIndex,
           "Selected Drink:",
           selectedDrink
-        );
+        );*/
         return '<div class="selected-item">' + selectedDrink + "</div>";
       })
       .join("");
-
     $("#selected-ingredients .list-of-ing").html(selectedIngredientsHtml);
+    console.log(allIngredients);
   }
 });
