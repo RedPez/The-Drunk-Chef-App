@@ -46,7 +46,9 @@ let count = 0;
       
       
       let sanitizedCocktailName = cocktails.replace(/[^a-zA-Z0-9]/g, "-");
-       let replacedCocktailName = sanitizedCocktailName + uniqueID
+      let replacedCocktailName = sanitizedCocktailName + uniqueID
+      let uniqueFavBtnTag = cocktails.replaceAll(",", "").split(" ")[0] + uniqueID
+      let uniqueFavBtnId = "#" + uniqueFavBtnTag 
        console.log(replacedCocktailName)
 
     // This has been commented out - there is a container in the html
@@ -91,10 +93,10 @@ let count = 0;
       });
       cocktailResultsButton.text("View Recipe");
       // Card save to favourites button
-      let favRecipeBtn = $("<a>");
+      let favRecipeBtn = $("<button>");
       favRecipeBtn.attr({
         class: "fav-btn",
-        href: "#",
+        id: uniqueFavBtnTag
     });
       // Star icon
       let starIcon = $("<i>");
@@ -193,6 +195,21 @@ let count = 0;
       resultsRows.append(resultsColumns, cocktailModalFade);
       
 // Need to create the onclick functionality to open modal
+$(document).on("click", uniqueFavBtnId, function(){
+  
+  let savedCocktailNames = []
+
+  if (localStorage.getItem("savedCocktailNames")){
+    savedCocktailNames = JSON.parse(localStorage.getItem("savedCocktailNames"))
+    savedCocktailNames.push(cocktails)
+   } else {
+    savedCocktailNames = [cocktails]
+   }
+
+   localStorage.setItem("savedCocktailNames", JSON.stringify(savedCocktailNames))
+ 
+})
+
     
     })
   }
@@ -223,7 +240,7 @@ let count = 0;
       let embed = "&videoEmbeddable=true"
       let limit = "&maxResults=1"
       let vidQuery = "&q=" + cocktailSearch
-      let youtubeApiKey = "&key=AIzaSyC7wHq1P-HrvJpFQf-ivJ_fHfAFFVO1BA4"
+      let youtubeApiKey = "&key=AIzaSyBDY7-E1emeab9V-98uTKO4Hpn95R64xaY"
     console.log(vidQuery)
   
 
