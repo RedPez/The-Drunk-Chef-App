@@ -159,6 +159,10 @@ p {
   font-size: 30px;
 }
 
+.fav-btn:hover {
+  color: grey;
+}
+
 /* Section that displays selected ingredients*/
 #selected-ingredients {
   background-image: linear-gradient(
