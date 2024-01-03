@@ -12,16 +12,27 @@
     } 
 
     const favImages = [
-      "./images/card-image1.png",
-      "./images/card-image2.png",
-      "./images/card-image3.png",
-      "./images/card-image4.png",
-      "./images/card-image5.png",
-      "./images/card-image6.png",
-      "./images/card-image7.png",
-      "./images/card-image8.png",
-      "./images/card-image9.png",
-      "./images/card-image10.png"
+    "./images/image-5.jpg",
+    "./images/image-6.jpg",
+    "./images/image-7.jpg",
+    "./images/image-8.jpg",
+    "./images/image-9.jpg",
+    "./images/image-10.jpg",
+    "./images/image-11.jpg",
+    "./images/image-12.jpg",
+    "./images/image-13.jpg",
+    "./images/image-14.jpg",
+    "./images/image-15.jpg",
+    "./images/image-16.jpg",
+    "./images/image-17.jpg",
+    "./images/image-18.jpg",
+    "./images/image-19.jpg",
+    "./images/image-20.jpg",
+    "./images/image-21.jpg",
+    "./images/image-22.jpg",
+    "./images/image-23.jpg",
+    "./images/image-24.jpg",
+    "./images/image-25.jpg"
     ]
     
     function getRandom(){
@@ -37,13 +48,7 @@
     
      
     
-    function renderFavCocktailInformation (favUrl, favCocktails, favIngredients, favRecipe, favCocktailImages) {
-    
-      fetch(favUrl)
-      .then(function (response) {
-          return response.json()
-      }).then(function (data) {
-        
+    async function renderFavCocktailInformation (favUrl, favCocktails, favIngredients, favRecipe, favCocktailImages) {
         
         let replacedCocktailName = favCocktails.replace(/[^a-zA-Z0-9]/g, "-");
          console.log(replacedCocktailName)
@@ -76,7 +81,7 @@
         // Testing card text
         let cardText = $("<p>");
         cardText.attr("class", "card-text");
-        cardText.text("This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.");
+        cardText.text("Click the button below to view your recipe!");
         // Div that contains both fav and open modal buttons
         let buttonsDiv = $("<div>");
         buttonsDiv.attr("class", "btns-div");
@@ -114,8 +119,8 @@
           "data-bs-dismiss": "modal",
         });
         modalCloseButton.html("&times");
-        let modalTitle = $("<h4>");
-        modalTitle.attr("class", "modal-title fs-5");
+        let modalTitle = $("<h2>");
+        modalTitle.attr("class", "modal-title fs-2");
         modalTitle.text(favCocktails);
     
         //Modal Body
@@ -134,6 +139,8 @@
         })
         let modalIngredientsContainer = $("<div>")
         modalIngredientsContainer.attr("class", "ingredients-container")
+        let modalIngredientsTitle = $("<h4>");
+        modalIngredientsTitle.text("Ingredients");
         let modalCocktailIngredientsUlEl = $("<ul>")
         let modalCocktailIngredients = favIngredients
         modalCocktailIngredients.forEach(function(ingredient){
@@ -144,46 +151,58 @@
         let cocktailRecipe = favRecipe
         let modalRecipeContainer = $("<div>")
         modalRecipeContainer.attr("class", "recipe-container")
-        let modalRecipeEl = $("<h4>")
+        let modalRecipeTitle = $("<h4>");
+        modalRecipeTitle.text("Recipe");
+        let modalRecipeEl = $("<p>")
         modalRecipeEl.text(cocktailRecipe)
-        let modalVideoContainer = $("<div>")
-        modalVideoContainer.attr("class", "modal-vid-container")
-        let modalVideoheader = $("<h3>")
-        modalVideoheader.text("Video Tutorial")
-        let modalCocktailVideo = $("<iframe>")
-        modalCocktailVideo.attr(
-          {
-              width: "100%",
-              height: "100%",
-              src: "https://www.youtube.com/embed/" + data.items[0].id.videoId,
-              title: "Cocktail Recipe Tutorial",
-              frameborder: "0",
-              allowfullscreen: "autoplay"
-    
-            }
-        )
-        
+
         //Modal append inside body
-        modalVideoContainer.append(modalVideoheader, modalCocktailVideo)
-        modalRecipeContainer.append(modalRecipeEl)
-        modalIngredientsContainer.append(modalCocktailIngredientsUlEl)
-        modalImageContainer.append(modalCocktailImage)
-        modalImageIngredientsContainer.append(modalImageContainer, modalIngredientsContainer)
-        modalBody.append(modalImageIngredientsContainer, modalRecipeContainer, modalVideoContainer)
-        cocktailModalHeader.append(modalCloseButton, modalTitle);
-        cocktailModalContent.append(cocktailModalHeader, modalBody);
-        cocktailModalDialog.append(cocktailModalContent);
-        cocktailModalFade.append(cocktailModalDialog);
-    
-        // Results append inside cards
-        buttonsDiv.append(cocktailResultsButton);
-        cardBody.append(cocktailNameEl, cardText, buttonsDiv);
-        resultsCard.append(cocktailImageEl, cardBody)
-        resultsColumns.append(resultsCard);
-        resultsRows.append(resultsColumns, cocktailModalFade);
+  modalRecipeContainer.append(modalRecipeTitle, modalRecipeEl);
+  modalIngredientsContainer.append(
+    modalIngredientsTitle,
+    modalCocktailIngredientsUlEl
+  );
+  modalImageContainer.append(modalCocktailImage);
+  modalImageIngredientsContainer.append(
+    modalImageContainer,
+    modalIngredientsContainer
+  );
+  modalBody.append(
+    modalImageIngredientsContainer,
+    modalRecipeContainer
+  );
+  cocktailModalHeader.append(modalTitle, modalCloseButton);
+  cocktailModalContent.append(cocktailModalHeader, modalBody);
+  cocktailModalDialog.append(cocktailModalContent);
+  cocktailModalFade.append(cocktailModalDialog);
+
+  // Results append inside cards
+  buttonsDiv.append(cocktailResultsButton);
+  cardBody.append(cocktailNameEl, cardText, buttonsDiv);
+  resultsCard.append(cocktailImageEl, cardBody);
+  resultsColumns.append(resultsCard);
+  resultsRows.append(resultsColumns, cocktailModalFade);
+   
+    let response = await fetch(favUrl)
+    if (response.ok) { 
+      let data = await response.json()
+      let modalVideoContainer = $("<div>");
+      modalVideoContainer.attr("class", "modal-vid-container");
+      let modalVideoheader = $("<h3>");
+      modalVideoheader.text("Video Tutorial");
+      let modalCocktailVideo = $("<iframe>");
+      modalCocktailVideo.attr({
+        src: "https://www.youtube.com/embed/" + data.items[0].id.videoId,
+        title: "Cocktail Recipe Tutorial",
+        frameborder: "0",
+        allowfullscreen: "autoplay",
+      });
+      modalVideoContainer.append(modalVideoheader, modalCocktailVideo);
+      modalBody.append(
+        modalVideoContainer
+      );
+    } 
         
-      
-      })
     }
     
     const fetchFavCocktailName = async () => {
@@ -222,7 +241,7 @@
         let embedFav = "&videoEmbeddable=true"
         let limitFav = "&maxResults=1"
         let favVidQuery = "&q=" + favCocktailSearch
-        let favYoutubeApiKey = "&key=AIzaSyBrQ1rW67Rt3qrtIZVGV6bXzTyNxmSReA8"
+        let favYoutubeApiKey = "&key=AIzaSyBtpr3_oYl76sFc1jmfMf65ALjRLda-0FY"
       console.log(favVidQuery)
     
     
