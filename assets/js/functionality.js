@@ -221,11 +221,20 @@ $(document).ready(function () {
 
     if (localStorage.getItem("savedCocktailNames")){
       savedCocktailNames = JSON.parse(localStorage.getItem("savedCocktailNames"))
-      savedCocktailNames.push(cocktails)
     } 
-    else {
-      savedCocktailNames = [cocktails]
-    }
+
+    let list = JSON.parse(localStorage.getItem("savedCocktailNames"))
+    let exist = false
+
+    for(var i = 0; i < list.length; i++)
+        if(list[i] == cocktails) {
+            exist = true;
+        }
+
+        if(!exist){
+          savedCocktailNames.push(cocktails)
+        } 
+    
 
     localStorage.setItem("savedCocktailNames", JSON.stringify(savedCocktailNames))
   
