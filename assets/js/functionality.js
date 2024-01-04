@@ -40,9 +40,9 @@ $(document).ready(function () {
     cocktailImages,
     uniqueID
   ) {
-    let sanitizedCocktailName = cocktails.replace(/[^a-zA-Z0-9]/g, "-");
+    let sanitizedCocktailName = cocktails.replace(/([-,.€~!@#$%^&*()_+=`{}\[\]\|\\:;'<>])+/g, "-");
     let replacedCocktailName = sanitizedCocktailName + uniqueID
-    let uniqueFavBtnTag = cocktails.replaceAll(",", "").split(" ")[0] + uniqueID + "fav"
+    let uniqueFavBtnTag = cocktails.replace(/([-,.€~!@#$%^&*()_+=`{}\[\]\|\\:;'<>])+/g, "").split(" ")[0] + uniqueID + "fav"
     let uniqueFavBtnId = "#" + uniqueFavBtnTag
      console.log(replacedCocktailName)
 
