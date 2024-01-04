@@ -3,7 +3,7 @@
 /* Disables default Bootstrap navbar background */
 nav {
   background: black !important;
-  height: 170px;
+  /* height: 170px; */
 }
 
 .nav-div {
@@ -17,12 +17,14 @@ nav {
   font-size: 20px;
   font-weight: bold;
   color: rgb(252, 252, 252) !important;
+  text-align: center;
 }
 
 /* Edit color here to change to black on hover */
 .page-links:hover {
-background-color: #D8EF7E;
-color: black;
+background-color: rgb(224, 241, 147);
+padding: 10px;
+color: black !important;
 }
 
 .navbar-toggler,
@@ -75,7 +77,6 @@ color: black;
 /* Intro section image */
 .intro-img {
   width: 400px;
-  height: 300px;
 }
 
 /* Section titles incl. jumbotron, sections and cards */
@@ -117,23 +118,67 @@ p, .ing-list {
 #search-heading {
   font-size: 22px;
 }
+#warning-txt {
+  color: red;
+}
 
 /* Multi-select button to choose ingredients*/
 .search-btns {
     margin-top: 25px;
 }
 
-#multiple-checkboxes {
-  background-image: linear-gradient(silver, white);
-  border: 2px solid black !important;
-  border-radius: 4px !important;
-  font-weight: bold;
+.search-btns::before {
+  content: "Select your ingredients:";
   font-family: "Jost";
-  width: 50%;
+  font-weight: bold !important;
 }
 
 #search-btn:hover {
   background: rgb(72, 70, 70);
+}
+/* Multiselect dropdown button*/
+.mult-select-tag {
+  font-family:"Jost" !important;
+  width: 75%;
+}
+.mult-select-tag .body {
+  border: 3px solid rgb(38, 37, 37);
+  border-radius: 3px !important;
+  background-image: linear-gradient(silver,white);
+}
+
+.mult-select-tag .input {
+background-color: rgb(232, 216, 248);
+border-radius: 3px !important;
+border: solid 2px #5b217f;
+color: #5b217f !important;
+}
+
+.mult-select-tag .btn-container {
+  color: black;
+  border-left: solid 3px;
+}
+.mult-select-tag button {
+  color: black;
+}
+
+.mult-select-tag .drawer{
+ border: 3px solid black;
+}
+.mult-select-tag ul li:hover{
+  background: #d8ef7e71;
+}
+
+.mult-select-tag .item-container{
+  border: 2px #476911 solid !important;
+  background-color: #dcf4b4 !important;
+}
+
+.mult-select-tag .item-label {
+  color: #3c590f !important;
+}
+ .mult-select-tag .item-close-svg {
+  color: black !important;
 }
 
 /* Button to trigger search for results*/
@@ -159,8 +204,7 @@ p, .ing-list {
   color: black;
   font-size: 30px;
 }
-
-.fav-btn:hover, .close:hover {
+.fav-btn:hover, .close:hover, .socials {
   color: grey;
 }
 
@@ -202,10 +246,14 @@ footer {
 .socials {
   color: white;
 }
+
 /* Back to top link*/
 .back-to-top {
   text-decoration: none;
   color: white;
+}
+.back-to-top:hover {
+  text-decoration: underline;
 }
 
 /*MODAL CSS CAN BE ADDED HERE*/
@@ -229,8 +277,35 @@ footer {
 iframe {
   width: 100%;
   height: 300px;
+  border: solid 4px black;
 }
 
 .modal-body {
   scrollbar-color: black;
+}
+
+@media only screen and (max-width: 768px) {
+  .search-btns {
+    margin-bottom: 25px;
+  }
+#search-btn {
+  width: 100% !important;
+}
+
+.mult-select-tag { 
+  width: 100%;
+}
+
+.intro {
+  text-align: center !important;
+}
+
+#intro-body {
+  font-size: 20px;
+}
+
+
+#search-heading, #search-title {
+  text-align: center;
+}
 }
