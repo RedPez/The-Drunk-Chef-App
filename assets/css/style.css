@@ -203,6 +203,8 @@ color: #5b217f !important;
   text-transform: none;
   color: black;
   font-size: 30px;
+  background: none !important;
+  border: none !important;
 }
 .fav-btn:hover, .close:hover, .socials {
   color: grey;
