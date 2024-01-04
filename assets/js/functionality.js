@@ -217,6 +217,8 @@ $(document).ready(function () {
   // click button added to the fav-btn to enable cocktail name to be saved to local storage
   $(document).on("click", uniqueFavBtnId, function(){
 
+    $(this).find("i").toggleClass("fa-regular fa-solid");
+
     let savedCocktailNames = []
 
     if (localStorage.getItem("savedCocktailNames")){
