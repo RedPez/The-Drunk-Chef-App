@@ -42,8 +42,8 @@ $(document).ready(function () {
   ) {
     let sanitizedCocktailName = cocktails.replace(/[^a-zA-Z0-9]/g, "-");
     let replacedCocktailName = sanitizedCocktailName + uniqueID
-    let uniqueFavBtnTag = cocktails.replaceAll(",", "").split(" ")[0] + uniqueID
-    let uniqueFavBtnId = "#" + uniqueFavBtnTag + "fav"
+    let uniqueFavBtnTag = cocktails.replaceAll(",", "").split(" ")[0] + uniqueID + "fav"
+    let uniqueFavBtnId = "#" + uniqueFavBtnTag
      console.log(replacedCocktailName)
 
   // This has been commented out - there is a container in the html
@@ -91,7 +91,7 @@ $(document).ready(function () {
     let favRecipeBtn = $("<button>");
     favRecipeBtn.attr({
       class: "fav-btn",
-      id: uniqueFavBtnTag + "fav"
+      id: uniqueFavBtnTag
   });
     // Star icon
     let starIcon = $("<i>");
@@ -216,15 +216,14 @@ $(document).ready(function () {
         
   // click button added to the fav-btn to enable cocktail name to be saved to local storage
   $(document).on("click", uniqueFavBtnId, function(){
-    
+
     let savedCocktailNames = []
 
     if (localStorage.getItem("savedCocktailNames")){
       savedCocktailNames = JSON.parse(localStorage.getItem("savedCocktailNames"))
-    } 
-
-    let list = JSON.parse(localStorage.getItem("savedCocktailNames"))
-    let exist = false
+      
+      let list = JSON.parse(localStorage.getItem("savedCocktailNames"))
+      let exist = false
 
     for(var i = 0; i < list.length; i++)
         if(list[i] == cocktails) {
@@ -234,8 +233,11 @@ $(document).ready(function () {
         if(!exist){
           savedCocktailNames.push(cocktails)
         } 
-    
+    } else {
+      savedCocktailNames = [cocktails]
+    }
 
+    
     localStorage.setItem("savedCocktailNames", JSON.stringify(savedCocktailNames))
   
   })
