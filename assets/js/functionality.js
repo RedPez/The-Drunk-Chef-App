@@ -305,6 +305,7 @@ $(document).ready(function () {
   };
   $("#search-btn").on("click", function(){
     $(".cardRows").empty()
+    $("#warning-txt").empty();
     fetchCocktailName()
   } );
 });
