@@ -96,6 +96,7 @@ $(document).ready(function () {
     "Reposado Tequila",
     "Rhubarb",
     "Rhubarb bitters",
+    "Rum",
     "Rye",
     "Rye whiskey",
     "Sage",
