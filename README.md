@@ -1,14 +1,11 @@
 # The Drunk Chef
 
-### Screenshot of finished website goes here
-
 ## Table of Contents
 1. [About](#about-the-project)
 2. [Technologies](#technologies)
 3. [User Story](#user-story)
 4. [Acceptance Criteria](#acceptance-criteria)
 5. [Key Features](#key-features)
-6. [Usage](#usage)
 7. [Build Status](#build-status)
 8. [License](#license)
 9. [Credits](#credits)
@@ -23,6 +20,8 @@ A website created to elevate your at-home cocktail experience.
 Using data from cocktail recipe and Youtube video APIs, you can select ingredients you have on hand and search for a tailored result of cocktail recipes. Once you find a cocktail that piques your interest, a simple click on the recipe opens a user-friendly modal where you'll find a list of ingredients, step-by-step recipe guide, and a video tutorial to ensure a seamless and enjoyable cocktail-making experience. 
  
  Enjoy!
+
+![Screenshot image of web app](/assets/images/The-Drunk-Chef-screenshot.png)
 
 #### [You can visit our page by clicking here.](https://redpez.github.io/The-Drunk-Chef-App/)
 
@@ -64,10 +63,6 @@ AS AN alcohol drinker, I WANT a cocktail recipe app that will take ingredients a
 - Responsive design that adapts to various screen sizes
 - A high-quality UI.
 
-### Usage 
-How to use the website
-
-
 ### Build status
 We prioritise seamless functionality and recognise that there is always room for improvement. This being the case we have reflected on some aspects of our website that we hope to improve in future iterations: 
 - Implementing a solution for users to select from a wider range of ingredients
@@ -75,7 +70,6 @@ We prioritise seamless functionality and recognise that there is always room for
 - To further engage our users and foster a sense of community, we are planning to integrate social media sharing functionalities. This will enable users to share their favorite cocktail recipes, experiences, and even their own creations directly from the platform
 - To enhance the user interaction within the community, we're considering adding a rating and review system. 
 
-  
 ### License 
 MIT
 
@@ -84,8 +78,6 @@ MIT
 - [Canva](https://canva.com/)
 - [Codepen](https://codepen.io/)
 - [w3schools](https://www.w3schools.com/)
-- [add link title here](#addlinkhere)
-- [add link title here](#addlinkhere)
 - Many, many google searches
 
 ### Creators
