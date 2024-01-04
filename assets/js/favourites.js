@@ -144,7 +144,8 @@
         let modalCocktailIngredientsUlEl = $("<ul>")
         let modalCocktailIngredients = favIngredients
         modalCocktailIngredients.forEach(function(ingredient){
-          let ingredientLiEl = $("<li>")
+        let ingredientLiEl = $("<li>")
+        ingredientLiEl.attr("class", "ing-list");
         ingredientLiEl.text(ingredient)
         modalCocktailIngredientsUlEl.append(ingredientLiEl)
         })
@@ -241,7 +242,7 @@
         let embedFav = "&videoEmbeddable=true"
         let limitFav = "&maxResults=1"
         let favVidQuery = "&q=" + favCocktailSearch
-        let favYoutubeApiKey = "&key=AIzaSyBtpr3_oYl76sFc1jmfMf65ALjRLda-0FY"
+        let favYoutubeApiKey = "&key=AIzaSyCMrakuq-q97OBgPm54uLa7iaSXkqw7JqE"
       console.log(favVidQuery)
     
     
