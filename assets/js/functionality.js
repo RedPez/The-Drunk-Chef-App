@@ -286,7 +286,7 @@ $(document).ready(function () {
       let embed = "&videoEmbeddable=true";
       let limit = "&maxResults=1";
       let vidQuery = "&q=" + cocktailSearch;
-      let youtubeApiKey = "&key=AIzaSyDp-I7TIZUI3EJOgyCkDzFbfkURX3cvkt0";
+      let youtubeApiKey = "&key=AIzaSyBVFFMfKK869oKYuUxrdi9D_r9u80idGDs";
       console.log(vidQuery);
 
       let cocktailVideoUrl =
