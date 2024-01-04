@@ -255,9 +255,6 @@
     
     })
     
-    $(document).on("click", uniqueClearId, function() {
-   localStorage.removeItem();
-  });
     
     })
 
