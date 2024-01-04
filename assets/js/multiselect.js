@@ -11,6 +11,7 @@ $(document).ready(function () {
     "Amaro Montenegro",
     "Angostura",
     "Angostura bitters",
+    "Apple juice",
     "Apple brandy",
     "Apricot brandy",
     "Blanco tequila",
@@ -122,6 +123,7 @@ $(document).ready(function () {
     "Vodka",
     "Vodka Citron",
     "Water",
+    "Whiskey",
     "White rum",
     "Worcestershire Sauce",
     "Yellow Chartreuse"
