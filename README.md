@@ -5,12 +5,14 @@
 ## Table of Contents
 1. [About](#about-the-project)
 2. [Technologies](#technologies)
-3. [Key Features](#key-features)
-4. [Usage](#usage)
-5. [Build Status](#build-status)
-6. [License](#license)
-7. [Credits](#credits)
-8. [Creators](#creators)
+3. [User Story](#user-story)
+4. [Acceptance Criteria](#acceptance-criteria)
+5. [Key Features](#key-features)
+6. [Usage](#usage)
+7. [Build Status](#build-status)
+8. [License](#license)
+9. [Credits](#credits)
+10. [Creators](#creators)
 
 ## About the project
 
@@ -35,6 +37,22 @@ This project was created with:
 - Google APIs
 - API Ninjas 
 - Canva
+
+### User Story
+AS AN alcohol drinker, I WANT a cocktail recipe app that will take ingredients as parameters and return relevant cocktail recipes SO THAT I can create delightful cocktails utilizing readily available items in my household.
+
+### Acceptance Criteria 
+- The app is ready when the user is able to select items from a multi-select dropdown menu featuring an extensive list of ingredients.
+- The app is ready when selected items are inserted as parameters in a search and returns relevant recipes.
+- The app is ready when the user is able to mark recipes as favorites for convenient access in the future.
+- As a user, I should be able to navigate the website with ease. 
+- As a user, I should be able to search for a recipe at any point during my interaction with the application.
+- The app is ready when it fetches data from two separate APIs - one dedicated to cocktail recipes and the other providing YouTube video tutorials.
+- The app is ready when the user is able to effortlessly navigate between the home page and the favorites page.
+- The app is ready when the user has a clear view of their favorite recipes on the designated favorites page.
+- The app is ready when the user is able to view the already selected ingredients conveniently displayed next to the dropdown menu.
+- The app is ready when the user is able to dynamically add or remove ingredients at any time, providing a flexible and interactive experience.
+- The app is ready when the user is able to access a modal containing detailed information such as ingredients, recipe instructions, and a YouTube video by clicking on the cocktail name within the search results.
 
 ### Key Features
 - Interactive search function that allows you to select ingredients using a dropdown list.
